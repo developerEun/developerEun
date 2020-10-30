@@ -1,15 +1,15 @@
 /* header */
 header{ position: absolute; width:100%; top:28px; z-index:999; padding: 0 80px; box-sizing: border-box; }
 #logo{ float:left; }
-#logo a{ display: block; width: 58px; height: 35px; background: url('images/logo.png') no-repeat center center; text-indent: -9999px; }
-.gnb { position: relative; float:right; width:28px; height:28px; cursor:pointer; background: url('images/gnb.png') no-repeat center center; margin-top:8px; }
+#logo a{ display: block; width: 58px; height: 35px; background: url('../images/logo.png') no-repeat center center; text-indent: -9999px; }
+.gnb { position: relative; float:right; width:28px; height:28px; cursor:pointer; background: url('../images/gnb.png') no-repeat center center; margin-top:8px; }
 .gnb img { position: absolute; left: 0; top: 0; transition: all .5s; }
 .gnb:hover img{ left: 12px; top: 12px; opacity: 0.1; }
 .gnb .top { top: 12px; }
 .gnb .left { left: 12px; }
 .gnb .right { top: 12px; left: 24px; }
 .gnb .bottom { top: 24px; left: 12px; }
-.gnb.on { background-image: url('images/close.png'); }
+.gnb.on { background-image: url('../images/close.png'); }
 .gnb.on img { display: none; }
 
 /* 공통 */
@@ -56,17 +56,17 @@ header{ position: absolute; width:100%; top:28px; z-index:999; padding: 0 80px; 
 .swiper-slide .mouseover dl{ position:absolute; left:50%; transform: translateX(-50%); width:100%; text-align:center; bottom:110px; color:#fff; }
 .swiper-slide .mouseover dt{ font-size: 48px; }
 .swiper-slide .mouseover dd{ font-size: 18px; font-weight: 300; margin-top: 20px; line-height: normal; }
-.swiper-slide:first-child .slide-wrap{ background-image: url('images/2bs.jpg'); }
+.swiper-slide:first-child .slide-wrap{ background-image: url('../images/2bs.jpg'); }
 /* .swiper-slide:first-child .mouseover{ background: rgba(165, 29, 54, .7); } */
 
-.swiper-slide:nth-child(2) .slide-wrap{ background-image: url('images/withwork.jpg'); }
+.swiper-slide:nth-child(2) .slide-wrap{ background-image: url('../images/withwork.jpg'); }
 /* .swiper-slide:nth-child(2) .mouseover{ background: rgba(218, 54, 61, .7); } */
 
 /* ABOUT */
 .about{ display: none; position: relative; width: 100%; height: 100vh; z-index: 10; background-color:#000; }
 .about.on{ display: block; }
 .about .image{ position: absolute; left:200px; top:50%; transform: translateY(-50%); width: 700px; height: 700px; background: #222; }
-.about .image .me{ width: 700px; height: 700px; background: url('images/about-me.jpg') no-repeat; background-size:cover; }
+.about .image .me{ width: 700px; height: 700px; background: url('../images/about-me.jpg') no-repeat; background-size:cover; }
 .about .image .by{ display:block; font-size: 18px; color:#fff; opacity:.2; text-align: right; margin-top: 10px; }
 .about .text{ position: absolute;  left: 815px; top: 50%; transform: translateY(-50%); }
 .about .text-wrap { color: #fff; } 
@@ -78,7 +78,7 @@ header{ position: absolute; width:100%; top:28px; z-index:999; padding: 0 80px; 
 
 /* CONTACT */
 .contact{ display: none; position: relative; width: 100%; height: 100vh; z-index: 10; 
-background-image: url("images/contact_bg.png");
+background-image: url("../images/contact_bg.png");
 background-repeat: no-repeat;
 background-position: left 300px top -10px; 
 background-size: contain;
