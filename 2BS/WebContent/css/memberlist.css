@@ -1,0 +1,55 @@
+h1 {
+    font-size: 80px;
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.member_table {
+   width: 60%;
+   height: 100px;
+   margin: auto;
+   text-align: center; 
+}
+
+.member_table .title td{
+	background: #FECC49;
+	color: #fff;
+	font-size: 18px;
+}
+
+.member_table td {
+	border: 1px solid #ddd;
+	padding: 10px 20px;
+	font-size: 16px;
+}
+	
+.paging {
+	list-style: none;
+	display: inline-flex;
+}
+
+li {
+	border: 1px solid orange;
+	text-decoration: none;
+	padding:5px 10px;
+    margin: 8px;
+}
+
+.paging .disable {
+	border: 1px solid silver;
+	color: silver;
+	padding: 7px
+}
+
+.paging li a:hover {
+	font-weight: 700;
+}
+
+   
+    
+    
+    
+ 
+ 
+   

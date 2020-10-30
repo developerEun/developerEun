@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700&display=swap&subset=latin-ext");
+	
+	#page {
+        width: 80%; margin: 150px auto 0;
+    }
+
+	h2{
+		font-family: 'SCDream', sans-serif;
+		color: #272a44;
+    	font-weight: bold;
+    	font-size : 2em;
+	}
+	
+	h3{
+		font-size: 1.1rem;
+	}
+	
+	hr{
+	border-top: 1px solid #ffcc4a;
+	}
+	
+	table {
+		border-collapse: collapse;
+		font-size: 15px;
+		text-align: center;
+		width: 100%;
+	}
+	table caption {
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	table th, table td {
+		text-align: center;
+	    border-bottom: 1px solid #ddd;
+	    height: 90%;
+	    padding: 13px;
+	    font-size: 1.2rem;
+    	font-weight: 400;
+	}
+	
+	table td{
+		font-size: 1rem;
+		font-weight: normal;
+	}
+	
+	.yesOrNo{
+		color: #ffcc4a;
+	}
+	
+	
+	textarea{
+		width : 100%;
+		font-size: 1rem;
+    	font-weight: 400;
+    	color: #666;	
+	}
+	p{
+	    text-align: center;
+	    font-size: 1.5em;
+	    font-weight: bold;
+	    padding-bottom: 50px;
+	    border-bottom: 1px solid #ddd;
+	    margin:50px 0;
+	}
+	p img{
+		width: 100%;
+	}
+	
+	.insertsubject, .insertcontent{
+		width: 100%;
+   		padding: 2px;
+   		font-size: 1em;
+    	border: 1px #eca872;
+	
+	}
+	
+	.sub:hover, .update:hover, .button:hover, .repInsert:hover, .repclick:hover, .repUpdate:hover,
+	 .repDelete:hover, .confirm:hover, .reset:hover, .QA_delete:hover, .QA_update:hover{
+		background-color: #272a44;
+		color: white;
+	}
+	
+	.search{
+		height: 60px;
+	    text-align: center;
+	    margin-left: auto;
+	    margin-right: auto;
+	    width: 600px;
+	    border: 0px solid black;
+
+	}
+	
+	.sub, .update, .button, .repInsert, .repclick, .repUpdate, .repDelete, .confirm, .reset, .QA_delete, .QA_update{
+		text-align: center;
+	    background-color: #ffcc4a;
+	    width: 65px;
+	    height: 35px;
+	    font-weight: 400;
+	    font-size: 1rem;
+	    border-radius: 35px;
+	    color: white;
+	}
+	
+	.keyword{
+	    text-align: left;
+	    border: 1px solid #f97e1d;
+	    height: 30px;
+	    padding: 10px;
+	    box-sizing: border-box;
+	    font-weight: bold;
+	    font-size: 1rem;
+	}
+	
+	.idx{
+		height: 30px;
+	    text-align: center;
+	    border: 1px solid #f97e1d;
+	    font-weight: 400;
+	    font-size: 1rem;
+	}
+	.head{
+		background-color: #ffcc4a;
+    	font-size: 1.2em;
+	}
+
+	
+	.names{
+		width : 100%;
+		font-size: 1rem;
+	}
+	
+	.qatable{
+		margin-top: 50px;
+	}
+	
+	.QAisnert{
+		font-family: 'SCDream', sans-serif;
+		color: #272a44;
+		font-weight: bold;
+	    font-size: 1.5rem;
+	    text-align: left;
+	
+	}
+	
+	.align-left { text-align: left; }
+	.align-center { text-align: center; }
+	.no { width: 10%; }
+	.writer { width: 15%; }
+	.regdate { width: 20%; }
+	.hit { width: 15%; }
+	.onoff {display:none} 
+	.onoff2 {display:none}
+	.hidden {display:none}
+	/***** 페이지 표시 부분 스타일(시작) ****/
+	.paging { list-style: none; 
+			display: inline-block;}
+	.paging li {
+		float: left;
+		margin-right: 8px;
+	}
+	.paging li a {
+		text-decoration: none;
+	    display: block;
+	    padding: 7px;
+	    border: 2px solid #f97e1d;
+	    font-weight: bold;
+	    color: black;
+	    padding: 6px 12px;
+	    border-radius: 100px;
+	    font-weight: bold;
+	    border-radius: 1;
+	}
+	.paging .disable {
+		border: 1px solid silver;
+		padding: 5px 7px;
+		color: silver;
+		border-radius: 100px;
+	}
+	.paging .now {
+		border: 2px solid orange;
+	    padding: 6px 12px;
+	    background-color: #f97e1d;
+	    border-radius: 100px;
+	    color: white;
+	    font-weight: bold;
+
+	}
+	
+	.paging li a:hover {
+		background-color: #f97e1d;
+		color: white;
+	}
+	/***** 페이지 표시 부분 스타일(끝) ****/

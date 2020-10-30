@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	<h2>강의제목(ex: 01강. 기초 문학)</h2>
+	<hr>
+	<h2>01강. 기초문학</h2><br><br>
+	<p><img src="images/image.PNG" alt="My Image"></p>
+
+	<br><br>
+	<hr><hr>
+	<br><br><br>
+
+	
+	<p>강사님께 질문하기<span>&nbsp;&nbsp;${member.id }</span>님 반갑습니다.</p><br>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="QA">
+<!--	<select id="QAAllList" parameterType="String" resultType="com.bc.model.vo.QAVO">
+ 		SELECT QA_NUM, MEMBER_NUM, S_T, QA_NAME, QA_CONTENT, TO_CHAR(QA_DATE, 'YYYY-MM-DD') AS QA_DATE, T_CODE 
+		FROM QA 
+		WHERE T_CODE = #{t_code}
+		ORDER BY QA_NUM
+	</select> -->
+	<insert id="QAInsert" parameterType="com.bc.model.vo.QAVO">
+		INSERT INTO QA
+			    (QA_NUM, MEMBER_NUM, S_T, QA_NAME, QA_CONTENT, QA_DATE, T_CODE, SU_NUM )
+		VALUES (QA_SEQ.NEXTVAL, #{member_num}, #{s_t}, #{qa_name}, #{qa_content}, SYSDATE, #{t_code}, #{su_num} )
+	</insert>
+	<update id="QAUpdate" parameterType="com.bc.model.vo.QAVO" >
+		UPDATE QA SET 
+			    S_T = #{s_t}, QA_NAME = #{qa_name}, QA_CONTENT = #{qa_content},
+			    QA_DATE = SYSDATE, T_CODE = #{t_code} 
+		WHERE QA_NUM = #{qa_num}
+	</update>
+	<delete id="QADelete" parameterType="int">
+		DELETE FROM QA
+		WHERE QA_NUM = #{qa_num}
+	</delete>
+	
+		<!-- 전체 게시글 개수 조회 -->
+	<select id="totalCount" resultType="int" parameterType="int">
+		SELECT COUNT(*) FROM QA WHERE SU_NUM = #{su_num}
+	</select>
+	
+	<!-- 페이지에 표시할 게시글 조회 
+		parameterType="Map" : begin, end 값 전달 용도
+		key-value 형태의 Map 사용 바인드변수명이 key가 됨-->
+	<select id="list" resultType="com.bc.model.vo.QAVO"
+			parameterType="com.bc.model.vo.QAVO">
+		SELECT QA_NUM, MEMBER_NUM, S_T, QA_NAME, QA_CONTENT, TO_CHAR(QA_DATE, 'YYYY-MM-DD') AS QA_DATE, T_CODE, SU_NUM 
+		  FROM 
+       ( SELECT ROWNUM R_NUM, QAS.*
+    		FROM (SELECT *
+                FROM QA 
+                WHERE SU_NUM = #{su_num}
+                ORDER BY QA_NUM DESC) QAS)
+		 WHERE R_NUM BETWEEN #{begin} AND #{end}
+		 
+	</select>
+
+	<!-- =====게시글 관련 SQL ===== -->
+	<!-- 게시글에 딸린 댓글 조회 -->
+		<select id="search" parameterType="map" 
+			resultType="com.bc.model.vo.QAVO">
+		<choose>
+			<when test="idx == 0">
+				SELECT QA.* FROM MEMBER M , (SELECT * FROM QA WHERE SU_NUM = #{su_num}) QA 
+				WHERE M.MEMBER_NUM =  QA.MEMBER_NUM AND M.NAME LIKE #{keyword}
+			</when>
+			<when test="idx == 2">
+				SELECT * FROM QA 
+				WHERE QA_NAME LIKE #{keyword} AND SU_NUM = #{su_num}
+			</when>
+			<when test="idx == 3">
+				SELECT * FROM QA 
+				WHERE QA_CONTENT LIKE #{keyword} AND SU_NUM = #{su_num}
+			</when>
+			<when test="idx == 1">  
+				SELECT QA.* FROM MEMBER M , (SELECT * FROM QA WHERE SU_NUM = #{su_num}) QA 
+				WHERE M.MEMBER_NUM =  QA.MEMBER_NUM AND M.ID LIKE #{keyword}
+			</when>
+			<otherwise>
+				SELECT * FROM QA 
+				WHERE 1 = 2 
+			</otherwise>
+		</choose>
+		
+		ORDER BY QA_NUM DESC
+	</select>
+		<!-- 페이지에 표시할 게시글 조회 
+		parameterType="Map" : begin, end 값 전달 용도
+		key-value 형태의 Map 사용 바인드변수명이 key가 됨-->
+	<select id="searchtotalCount" resultType="int"
+			parameterType="com.bc.model.vo.SearchVO">
+		SELECT COUNT(*)
+		  FROM 
+	       	( SELECT ROWNUM R_NUM, QAS.*
+	    		FROM (
+    		<choose>
+			<when test="idx == 0">
+				SELECT QA.* FROM MEMBER M , (SELECT * FROM QA  WHERE SU_NUM = #{su_num}) QA 
+				WHERE M.MEMBER_NUM =  QA.MEMBER_NUM AND M.NAME LIKE #{keyword}
+			</when>
+			<when test="idx == 2">
+				SELECT * FROM QA 
+				WHERE QA_NAME LIKE #{keyword} AND SU_NUM = #{su_num}
+			</when>
+			<when test="idx == 3">
+				SELECT * FROM QA
+				WHERE QA_CONTENT LIKE #{keyword} AND SU_NUM = #{su_num}
+			</when>
+			<when test="idx == 1">  
+				SELECT QA.* FROM MEMBER M , (SELECT * FROM QA  WHERE SU_NUM = #{su_num}) QA 
+				WHERE M.MEMBER_NUM =  QA.MEMBER_NUM AND M.ID LIKE #{keyword}
+			</when>
+			<otherwise>
+				SELECT * FROM QA 
+				WHERE 1 = 2 AND 
+			</otherwise>
+		</choose>
+			) QAS) 
+			
+	</select>
+	<select id="searchlist" resultType="com.bc.model.vo.QAVO"
+			parameterType="com.bc.model.vo.SearchVO">
+		SELECT QA_NUM, MEMBER_NUM, S_T, QA_NAME, QA_CONTENT, TO_CHAR(QA_DATE, 'YYYY-MM-DD') AS QA_DATE, T_CODE, SU_NUM
+		  FROM (	
+			SELECT ROWNUM R_NUM, QAS.*
+	    		FROM (	
+		<choose>
+			<when test="idx == 0">
+				SELECT QA.* FROM MEMBER M , (SELECT * FROM QA  WHERE SU_NUM = #{su_num}) QA 
+				WHERE M.MEMBER_NUM =  QA.MEMBER_NUM AND M.NAME LIKE #{keyword}
+			</when>
+			<when test="idx == 2">
+				SELECT * FROM QA 
+				WHERE QA_NAME LIKE #{keyword} AND SU_NUM = #{su_num}
+			</when>
+			<when test="idx == 3">
+				SELECT * FROM QA 
+				WHERE QA_CONTENT LIKE #{keyword} AND SU_NUM = #{su_num}
+			</when>
+			<when test="idx == 1">  
+				SELECT QA.* FROM MEMBER M , (SELECT * FROM QA  WHERE SU_NUM = #{su_num}) QA 
+				WHERE M.MEMBER_NUM =  QA.MEMBER_NUM AND M.ID LIKE #{keyword}
+			</when>
+			<otherwise>
+				SELECT * FROM QA 
+				WHERE 1 = 2
+			</otherwise>
+		</choose>
+		ORDER BY QA_NUM DESC ) QAS )
+		WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

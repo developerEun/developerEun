@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="2BS2">
+   <!-- ****************** 공지사항 ******************** -->
+   
+   <!-- 공지전체 데이터 CNT -->
+   <select id="totalCount" resultType="int">
+      SELECT COUNT(*) FROM NOTICE
+   </select>
+   <!-- 공지검색 데이터 CNT -->
+   <select id="searchCount" parameterType="map" resultType="int">
+      SELECT COUNT(*) FROM NOTICEBOARD
+      <choose>
+         <when test="idx==0">
+            WHERE R_NUM = #{keyword}
+         </when>
+         <when test="idx==1">
+            WHERE NOT_NAME = #{keyword}
+         </when>
+         <when test="idx==2">
+            WHERE MEMBER_NAME = #{keyword}
+         </when>
+      </choose>      
+   </select>
+   <!-- 공지타입="긴급" 데이터 CNT -->
+   <select id="importCount" resultType="int">
+      SELECT COUNT(*) FROM NOTICE WHERE NOT_TYPE = '긴급'
+   </select>
+   
+   <!-- 공지검색 데이터 LIST(페이징용) -->
+   <select id="noticeSearchList" resultType="com.bc.model.vo.NoticeVO" parameterType="com.bc.model.vo.SearchVO">
+      SELECT * FROM 
+      <choose>
+         <when test="idx==0">
+            (SELECT ROWNUM , N.* FROM NOTICEBOARD N WHERE R_NUM = #{keyword}) 
+         </when>
+         <when test="idx==1">
+            (SELECT ROWNUM , N.* FROM NOTICEBOARD N WHERE NOT_NAME = #{keyword}) 
+         </when>
+         <when test="idx==2">
+            (SELECT ROWNUM , N.* FROM NOTICEBOARD N WHERE MEMBER_NAME = #{keyword}) 
+         </when>
+      </choose>      
+      WHERE ROWNUM BETWEEN #{begin} AND #{end} ORDER BY R_NUM DESC
+   </select>
+   <!-- 공지전체 데이터 LIST -->
+   <select id="noticeList" resultType="com.bc.model.vo.NoticeVO" parameterType="Map">
+      SELECT * FROM NOTICEBOARD WHERE R_NUM BETWEEN #{begin} AND #{end} ORDER BY R_NUM DESC
+   </select>
+	<!-- 공지전체 데이터 LIST -->
+	<select id="noticeAllList" resultType="com.bc.model.vo.NoticeVO">
+		SELECT * FROM NOTICEBOARD
+	</select>   
+   <!-- 공지댓글 데이터 LIST -->
+   <select id="noticeReplyList" resultType="com.bc.model.vo.NoticeReplyVO" parameterType="int">
+      SELECT NR.*, M.NAME FROM NOTICE_REPLY NR, MEMBER M 
+          WHERE NR.NOT_NUM = #{not_num } AND NR.MEMBER_NUM = M.MEMBER_NUM ORDER BY REP_NUM DESC
+   </select>
+   <!-- 공지 ROWNUM 이용한 이전페이지, 다음페이지 -->
+   <select id="noticeRNOne" resultType="com.bc.model.vo.NoticeVO" parameterType="int">
+      SELECT * FROM NOTICEBOARD WHERE R_NUM = #{r_num}
+   </select>
+   <!-- 공지 상세페이지 데이터 -->
+   <select id="noticeOne" resultType="com.bc.model.vo.NoticeVO" parameterType="int">
+      SELECT * FROM NOTICEBOARD WHERE NOT_NUM = #{not_num}
+   </select>
+   <!-- 공지 타입="긴급" 상세페이지 데이터 -->   
+   <select id="importNotice" resultType="com.bc.model.vo.NoticeVO">
+      SELECT * FROM NOTICEBOARD WHERE NOT_TYPE = '긴급' ORDER BY R_NUM DESC
+   </select>
+   
+   <!-- 댓글 추가 -->   
+   <insert id="insertNoticeReply" parameterType="com.bc.model.vo.NoticeReplyVO">
+      INSERT INTO NOTICE_REPLY VALUES (NOTICE_REPLY_SEQ.NEXTVAL, #{not_num}, #{member_num}, #{rep_content}, SYSDATE)
+   </insert>
+   <!-- 공지 추가 -->   
+   <insert id="insertNotice" parameterType="com.bc.model.vo.NoticeVO">
+      INSERT INTO NOTICE VALUES (NOTICE_SEQ.NEXTVAL, #{member_num}, #{s_t}, #{not_name}, #{not_content}, SYSDATE, #{not_type}, #{not_file}, #{not_file_ori})
+   </insert>
+
+   <!-- 공지 수정 -->   
+   <update id="updateNotice" parameterType="com.bc.model.vo.NoticeVO">
+      UPDATE NOTICE SET NOT_NAME = #{not_name}, NOT_CONTENT = #{not_content}, NOT_TYPE = #{not_type}, NOT_FILE = #{not_file}, NOT_FILE_ORI = #{not_file_ori} WHERE NOT_NUM = #{not_num}
+   </update>
+   <!-- 공지 댓글 수정 -->
+   <update id="updateNoticeReply" parameterType="com.bc.model.vo.NoticeReplyVO">
+      UPDATE NOTICE_REPLY SET REP_CONTENT = #{rep_content} WHERE REP_NUM = #{rep_num}
+   </update>
+   
+   <!-- 공지 삭제 -->
+   <delete id="deleteNotice" parameterType="int" >
+      DELETE FROM NOTICE WHERE NOT_NUM = #{not_num}
+   </delete>
+   <!-- 공지 댓글 삭제 -->
+   <delete id="deleteNoticeReply" parameterType="int" >
+      DELETE FROM NOTICE_REPLY WHERE REP_NUM = #{rep_num}
+   </delete>
+   
+   
+   <!-- ****************** 캘린더 ******************** -->
+   
+   <!-- 캘린더 전체 데이터 -->
+   <select id="getTodo" resultType="com.bc.model.vo.CalendarVO">
+      SELECT CAL_NUM, MEMBER_NUM, TO_CHAR(CAL_DATE, 'YYYYMMDD') AS CAL_DATE, CAL_NAME, CAL_CONTENT, CAL_COLOR FROM CALENDAR ORDER BY CAL_NUM
+   </select>
+   
+   <!-- 캘린더 일정 추가 -->
+   <insert id="insertTodo" parameterType="com.bc.model.vo.CalendarVO">
+      INSERT INTO CALENDAR VALUES (CALENDAR_SEQ.NEXTVAL, 1, TO_DATE(#{cal_date},'YYYYMMDD'), #{cal_name}, #{cal_content}, #{cal_color} )
+   </insert>
+   <!-- 캘린더 일정 수정 -->
+   <update id="updateTodo" parameterType="com.bc.model.vo.CalendarVO">
+      UPDATE CALENDAR SET CAL_NAME = #{cal_name}, CAL_CONTENT = #{cal_content} WHERE CAL_NUM = #{cal_num}
+   </update>
+   <!-- 캘린더 일정 삭제 -->
+   <delete id="deleteTodo" parameterType="int" >
+      DELETE FROM CALENDAR WHERE CAL_NUM = #{cal_num}
+   </delete>
+</mapper>

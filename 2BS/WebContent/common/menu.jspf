@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+    <nav>
+        <div class="header">
+            <h1><a href="main.jsp">2BS</a></h1>
+            <ol class="menu">
+                <li><a href="#" onclick="logincheck('controller?type=classList')">강의구매</a></li>
+                <li><a href="#" onclick="logincheck('QAcontroller?type=QAclassList')" >질문하기</a></li>
+                <li><a href="#" onclick="logincheck('noticeViewExec.jsp')">공지사항</a></li>
+                <li><a href="#" onclick="logincheck('myCalendar.jsp')">캘린더</a></li>
+            </ol>
+            <div class="userInfo">
+				<c:if test= '${login == null }'>
+					<input type="hidden" class="loginCheck" value="100">
+	                <a href="login.jsp" class="userLogin">LOGIN</a>
+	                <span class="bar">|</span>
+	                <a href="join.jsp">SIGN UP</a>
+				</c:if>
+				<c:if test= '${login != null }'>
+	                <span class="userName">${login.getName() }님, 안녕하세요</span>
+	                <span class="bar">|</span>
+                	<a href="#" onclick="logincheck('controller?type=myCart')">장바구니</a>
+	                <span class="bar">|</span>                	
+	                <a href="membercontroller?type=logout" class="logout">LOGOUT</a>
+				</c:if>	     
+                <div class="myStudy">
+                    <h3>수강중인 강의</h3>
+                    <ul>
+                        <li>
+                            <p class="studyTitle">만화로 배우는 기초영어</p> 
+                            <p class="studyDate">기간: 2020.01.02~2020.03.05</p>
+                        </li>
+                        <li>
+                            <p class="studyTitle">만화로 배우는 기초영어</p> 
+                            <p class="studyDate">기간: 2020.01.02~2020.03.05</p>
+                        </li>
+                    </ul>
+                    <p class="imfoMsg">미리보기에서는 2개까지만 표시됩니다.</p>
+                </div>
+            </div>
+        </div>
+        <ol class="menuContents">
+            <li>
+                <div class="contentWrap">
+                    <dl>
+                        <dt>과목별</dt>
+                        <dd><a href="#">ALL</a></dd>
+                        <dd><a href="#">국어</a></dd>
+                        <dd><a href="#">수학</a></dd>
+                        <dd><a href="#">사회</a></dd>
+                        <dd><a href="#">과학</a></dd>
+                    </dl>
+                </div>
+            </li>
+        </ol>
+    </nav>

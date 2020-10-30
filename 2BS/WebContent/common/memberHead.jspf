@@ -1,0 +1,37 @@
+<%@page import="com.bc.model.vo.MemberVO"%>
+<%@page import="com.bc.model.vo.QAVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>    
+<%
+ 	QAVO qavo = new QAVO();
+	MemberVO member = (MemberVO) session.getAttribute("login");
+	if(member != null){
+		qavo.setS_t(member.getS_t());
+		qavo.setMember_num(member.getMember_num());
+		session.setAttribute("member_num", member.getMember_num());
+	}else{
+		session.setAttribute("member_num", null);
+	}
+ 	/* qavo.setMember_num(member_num); */ 
+ 	session.setAttribute("qavo", qavo);
+ 	session.setAttribute("t_code", 102);
+	session.setAttribute("member", member);  
+	
+%> 
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/newMenu.css">
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="JS/menu.js"></script>
+<script>
+	function logincheck(loginlink){
+		console.log("sdasa");
+		var login = $(".loginCheck").val();
+		if(login==100){
+			alert("로그인 후 이용해주세요.");
+			location.href= "login.jsp";
+			return false;
+		}else{
+			location.href= loginlink;
+		}
+	}
+</script>     

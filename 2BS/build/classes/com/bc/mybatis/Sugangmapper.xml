@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sugang">
+	
+	<!-- 전체 강의 개수 조회 -->
+	<select id="classCount" resultType="int">
+		SELECT COUNT(*) FROM SUGANG
+			WHERE SU_AVAIL = 'Y'
+	</select>
+	
+	<!-- 전체 강의 목록 & 선생님 이름 불러오기 
+		parameterType="Map" : begin, end 값 전달 용도
+		key-value 형태의 Map 사용 바인드변수명이 key가 됨-->
+	<select id="classList" resultType="com.bc.model.vo.ClassVO" 
+		parameterType="Map">
+		SELECT *
+		    FROM (SELECT ROWNUM R_NUM, CLASS.*
+		            FROM (SELECT S.*, M.NAME
+							    FROM SUGANG S, MEMBER M
+							    WHERE S.T_CODE = M.T_CODE
+							    	AND SU_AVAIL = 'Y'
+							    ORDER BY SU_NUM DESC) CLASS
+		         )
+		    WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 과목별 강의 개수 조회 -->
+	<select id="SubClassCount" resultType="int" parameterType="string">
+		SELECT COUNT(*) 
+			FROM SUGANG
+			WHERE CODE = #{code }
+				 AND SU_AVAIL = 'Y'
+	</select>
+	
+	<!-- 과목별 강의 목록 & 선생님 이름 불러오기 -->
+	<select id="SubClassList" resultType="com.bc.model.vo.ClassVO" parameterType="map">
+		SELECT *
+		    FROM (SELECT ROWNUM R_NUM, CLASS.*
+		            FROM (SELECT S.*, M.NAME
+						    FROM SUGANG S, MEMBER M
+						    WHERE S.T_CODE = M.T_CODE
+						    	AND S.CODE = #{code }
+						    	AND SU_AVAIL = 'Y'
+						    ORDER BY SU_NUM DESC) CLASS
+		         )
+		    WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 강의명/강사명으로 강의 개수 조회 -->
+	<select id="SearchClassCount" resultType="int" parameterType="map">
+		SELECT COUNT(*) 
+			FROM SUGANG S, MEMBER M
+			WHERE S.T_CODE = M.T_CODE
+				<choose>
+			    	<when test="idx == 0">
+			    		AND S.SU_NAME LIKE #{keyword }
+			    	</when>
+			    	<otherwise>
+			    		AND M.NAME LIKE #{keyword }
+			    	</otherwise>
+			    </choose>
+			 	 AND SU_AVAIL = 'Y'
+	</select>
+	
+	<!-- 강의명 / 강사명으로 검색 -->
+	<select id="SearchClassList" resultType="com.bc.model.vo.ClassVO" parameterType="map">
+	    SELECT *
+	    FROM (SELECT ROWNUM R_NUM, CLASS.*
+	            FROM (SELECT S.*, M.NAME
+						    FROM SUGANG S, MEMBER M
+						    WHERE S.T_CODE = M.T_CODE
+						    <choose>
+						    	<when test="idx == 0">
+						    		AND S.SU_NAME LIKE #{keyword }
+						    	</when>
+						    	<otherwise>
+						    		AND M.NAME LIKE #{keyword }
+						    	</otherwise>
+						    </choose>
+						    AND SU_AVAIL = 'Y'
+						    ORDER BY SU_NUM DESC) CLASS
+	         )
+	    WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 강의 상세정보 & 선생님 이름 불러오기 -->
+	<select id="selectOne" resultType="com.bc.model.vo.ClassVO">
+		SELECT S.*, M.NAME
+		    FROM SUGANG S, MEMBER M
+		    WHERE S.T_CODE = M.T_CODE 
+                AND S.SU_NUM = #{su_num }
+	</select>
+	
+	<!-- 리뷰게시판에 표시할 불러오기 
+		parameterType="Map" : begin, end 값 전달 용도
+		key-value 형태의 Map 사용 바인드변수명이 key가 됨-->
+	<select id="reviewList" resultType="com.bc.model.vo.ReviewVO"
+		parameterType="Map">
+		SELECT *
+		    FROM (SELECT ROWNUM R_NUM, REVIEW.*
+		            FROM (SELECT *
+		                    FROM REVIEW
+		                    WHERE SU_NUM = #{su_num }
+		                    ORDER BY RE_NUM DESC) REVIEW
+		         )
+		    WHERE R_NUM BETWEEN #{begin } AND #{end }
+	</select>
+	
+	<!-- member_num으로 id 받아오기 -->
+	<select id="getId" resultType="String">
+		SELECT ID
+		    FROM MEMBER
+		    WHERE MEMBER_NUM = #{member_num }
+	</select>
+	
+	<!-- 리뷰게시판 추가하기 -->
+	<insert id="insertReview" parameterType="com.bc.model.vo.ReviewVO">
+		INSERT INTO REVIEW
+	    (RE_NUM, SU_NUM, MEMBER_NUM, RE_GRADE, RE_DATE, RE_CONTENT)
+	    VALUES (REVIEW_SEQ.NEXTVAL, #{su_num }, #{member_num }, #{re_grade }, SYSDATE, #{re_content })
+	</insert>
+	
+	<!-- 전체 리뷰 개수 조회 -->
+	<select id="reviewCount" resultType="int" parameterType="string">
+		SELECT COUNT(*) 
+			FROM REVIEW
+			WHERE SU_NUM = #{su_num }		
+	</select>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="deleteReview" parameterType="string">
+		DELETE FROM REVIEW 
+			WHERE RE_NUM = #{re_num }
+	</delete>
+	
+	<!-- 리뷰 정보 불러오기 -->
+	<select id="get_review" parameterType="string" resultType="com.bc.model.vo.ReviewVO">
+		SELECT * 
+		    FROM REVIEW
+		    WHERE RE_NUM = #{re_num }
+	</select>
+	
+	<!-- 리뷰 수정하기 -->
+	<update id="update_review" parameterType="com.bc.model.vo.ReviewVO">
+		UPDATE REVIEW SET
+		    RE_GRADE = #{re_grade },
+		    RE_CONTENT = #{re_content }
+		    WHERE RE_NUM = #{re_num } 
+	</update>
+	
+	<!-- 선생님 목록 받아오기 -->
+	<select id="teacherList" resultType="com.bc.model.vo.MemberVO">
+		SELECT *
+			FROM MEMBER
+			WHERE S_T = 2
+	</select>
+	
+	<!-- 강의정보 수정(파일 비포함) -->
+	<update id="update_class1" parameterType="com.bc.model.vo.SugangVO">
+		UPDATE SUGANG SET
+		    SU_NAME = #{su_name },
+		    T_CODE = #{t_code },
+		    PRICE = #{price },
+		    MEMBER_NUM = #{member_num }
+		    WHERE SU_NUM = #{su_num }
+	</update>
+	
+	<!-- 강의정보 수정(파일 포함) -->
+	<update id="update_class2" parameterType="com.bc.model.vo.SugangVO">
+		UPDATE SUGANG SET
+		    SU_NAME = #{su_name },
+		    T_CODE = #{t_code },
+		    PRICE = #{price },
+		    IMG = #{img }
+		    WHERE SU_NUM = #{su_num }
+	</update>
+	
+	<!-- 강의 삭제 -->
+	<update id="deleteClass" parameterType="string">
+		UPDATE SUGANG SET
+			SU_AVAIL = 'N'
+			WHERE SU_NUM = #{su_num }
+	</update>
+	
+	<!-- 강의 추가하기 -->
+	<insert id="insertClass" parameterType="com.bc.model.vo.SugangVO">
+		INSERT INTO SUGANG
+	    (SU_NUM, CODE, SU_NAME, PRICE, T_CODE, MEMBER_NUM, SU_DATE, IMG)
+	    VALUES (SUGANG_SEQ.NEXTVAL, #{code}, #{su_name}, #{price}, #{t_code}, #{member_num}, SYSDATE, #{img})
+	</insert>
+	
+	<!-- 강의 가격 받아오기 -->
+	<select id="getPrice" parameterType="String" resultType="String">
+		SELECT PRICE 
+			FROM SUGANG
+			WHERE SU_NUM = #{su_num } 
+	</select>
+	
+	<!-- 카트에 추가하기 -->
+	<insert id="insertCart" parameterType="com.bc.model.vo.CartVO">
+		INSERT INTO CART
+			(CART_NUM, MEMBER_NUM, SU_NUM, PRICE)
+			VALUES (CART_SEQ.NEXTVAL, #{member_num }, #{su_num }, #{price })
+	</insert>
+	
+	<!-- 카트에 물품이 담겨있는지 확인하기 -->
+	<select id="isInCart" parameterType="map" resultType="integer">
+		SELECT COUNT(*)
+			FROM CART
+			WHERE SU_NUM = #{su_num }
+				AND MEMBER_NUM = #{member_num }
+	</select>
+	
+	<!-- 이미 구매한 물품인지 확인하기 -->
+	<select id="isOrdered" parameterType="map" resultType="integer">
+		SELECT COUNT(*)
+			FROM ORDERS
+			WHERE SU_NUM = #{su_num }
+				AND MEMBER_NUM = #{member_num }
+	</select>
+	
+	<!-- 카트에서 내 물품 받아오기 -->
+	<select id="MyCartList" parameterType="string" resultType="com.bc.model.vo.CartVO">
+		SELECT C.*, S.SU_NAME 
+		    FROM CART C, SUGANG S
+		    WHERE C.SU_NUM = S.SU_NUM
+		        AND C.MEMBER_NUM = #{member_num }
+	</select>
+	
+	<!-- 카트에서 결제할 항목 받아오기(1개씩) -->
+	<select id="getOneCart" parameterType="string" resultType="com.bc.model.vo.CartVO" >
+		SELECT C.*, S.SU_NAME 
+		    FROM CART C, SUGANG S
+		    WHERE C.SU_NUM = S.SU_NUM
+		        AND C.CART_NUM	= #{cart_num }
+	</select>
+	
+	<!-- 카트에서 항목 삭제하기 -->
+	<delete id="deleteCart" parameterType="String">
+		DELETE FROM CART
+			WHERE CART_NUM = #{cart_num }
+	</delete>
+	
+	<!-- Order테이블에 추가 -->
+	<insert id="insertOrder" parameterType="com.bc.model.vo.OrderVO">
+		INSERT INTO ORDERS
+		(ORDER_NUM, MEMBER_NUM, SU_NUM, CARD, PRICE, ORDER_DATE)
+		VALUES (ORDERS_SEQ.NEXTVAL, #{member_num }, #{su_num }, #{card }, #{price }, SYSDATE)
+	</insert>
+	
+</mapper>
+

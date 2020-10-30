@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<select id="QAmemberList" parameterType="Int" resultType="com.bc.model.vo.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE MEMBER_NUM = #{member_num}
+	</select>
+	<insert id="MemberInsert" parameterType="com.bc.model.vo.MemberVO">
+		INSERT INTO MEMBER
+				(MEMBER_NUM, ID, PWD, NAME, PHONE, S_T, T_CODE)
+		VALUES (MEMBER_SEQ.NEXTVAL, #{id}, #{pwd}, #{name}, #{phone}, #{s_t}, 
+		<choose>
+		<when test = "s_t == 2">
+		T_CODE_SEQ.NEXTVAL)
+		</when>
+		<when test = "s_t == 1">
+		0 )
+		</when>
+	</choose>		
+	</insert>
+	
+	<select id="MemberLogIn" resultType="com.bc.model.vo.MemberVO" parameterType="Map">
+		SELECT * FROM MEMBER
+		WHERE ID = #{id} AND PWD = #{pwd}
+	</select>
+	
+	<select id="findPassword" resultType="com.bc.model.vo.MemberVO" parameterType="Map">
+		SELECT * FROM MEMBER
+		WHERE ID = #{id} AND NAME = #{name}
+	</select>
+	
+	<select id="findId" resultType="com.bc.model.vo.MemberVO" parameterType="Map">
+		SELECT * FROM MEMBER
+		WHERE NAME = #{name} AND PHONE = #{phone}
+		
+	</select>
+	
+	<select id="checkId" resultType="com.bc.model.vo.MemberVO" parameterType="String">
+		SELECT * FROM MEMBER
+		WHERE ID = #{id} 
+	</select>
+	
+	<select id="checkPhone" resultType="com.bc.model.vo.MemberVO" parameterType="String">
+		SELECT * FROM MEMBER
+		WHERE PHONE = #{phone}
+	</select>
+	
+	<select id="memberList" resultType="com.bc.model.vo.MemberVO" parameterType="map">
+		SELECT * FROM MEMBER
+	<choose>
+		<when test = "idx == 1">
+		 WHERE NAME = #{keyword}
+		</when>
+		<when test = "idx == 2">
+		 WHERE ID = #{keyword}
+		</when>
+		<when test = "idx == 3">
+		 WHERE PHONE = #{keyword}
+		</when>
+		<when test = "idx == 4">
+		 WHERE T_CODE = #{keyword}
+		</when>
+	</choose>
+	  
+	</select>
+	
+	<select id="memberTotalCount" resultType="int">
+		SELECT COUNT(*) FROM MEMBER
+	</select>
+	
+		<select id="searchList" resultType="com.bc.model.vo.MemberVO" parameterType="com.bc.model.vo.SearchVO">
+	<!-- 3. 2번의 R_NUM을 BEGIN~END까지 구한 리스트 -->
+	SELECT * FROM (  <!-- 2. 1번 + ROWNUM 리스트 -->
+		SELECT ROWNUM R_NUM, M.* FROM 
+		(
+	<!-- 1. KEYWORD 별 전체리스트 출력 -->
+		SELECT * FROM MEMBER
+	<choose>
+		<when test = "idx == 1">
+		 WHERE NAME = #{keyword}
+		</when>
+		<when test = "idx == 2">
+		 WHERE ID = #{keyword}
+		</when>
+		<when test = "idx == 3">
+		 WHERE PHONE = #{keyword}
+		</when>
+		<when test = "idx == 4">
+		 WHERE T_CODE = #{keyword}
+		</when>
+	</choose>
+	  ORDER BY MEMBER_NUM ) M 
+	) WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<select id="searchCount" resultType="int" parameterType="com.bc.model.vo.MemberVO">
+		SELECT COUNT(*) FROM MEMBER
+	<choose>
+		<when test = "idx == 1">
+		 WHERE NAME = #{keyword}
+		</when>
+		<when test = "idx == 2">
+		 WHERE ID = #{keyword}
+		</when>
+		<when test = "idx == 3">
+		 WHERE PHONE = #{keyword}
+		</when>
+		<when test = "idx == 4">
+		 WHERE T_CODE = #{keyword}
+		</when>
+
+	</choose>
+	  
+	</select>
+
+	<select id="adminLogin" resultType="com.bc.model.vo.MemberVO" parameterType="Map">
+		SELECT * FROM MEMBER
+		WHERE ID = #{id} AND PWD = #{pwd} AND S_T = '2'
+	</select>	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+body {
+    padding-top: 150px;
+}
+
+p {
+	font-family: 'SCDream', sans-serif;
+    font-size: 50px;
+    font-weight: 700; 
+    margin: 10% 0%
+}
+
+label {
+    display: block;
+    
+}
+
+input {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 15px 10px;
+    box-sizing: border-box;
+}
+
+.login_a {
+    margin: 0 auto;
+    max-width:768px;
+    min-width: 460px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.main_menu {
+    width: 460px;
+    margin: 0 auto;
+}
+
+.login_a label {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight: 700;
+}
+
+button {
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgb(255 204 74);
+    padding: 10px;
+}
+
+.loginBtnBox{
+	overflow: hidden;
+	padding-top: 15px;
+	border-top: 1px solid #ddd;
+	
+}
+
+.loginBtn{
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+#id_f {
+    width: 49%;
+    height: 40px;
+    font-size: 1rem;
+    float:left;
+    margin-right: 2%;
+    background: #d2d2d2;
+}
+
+#pwd_f {
+	float:left;
+    width: 49%;
+    height: 40px;
+    font-size: 1rem;
+    background: #d2d2d2;
+}

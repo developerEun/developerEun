@@ -1,0 +1,498 @@
+@charset "UTF-8";
+
+.allWrap{width:90%; margin: 0 auto;}
+
+table tr{
+	height: 30px;
+}
+
+/* table th, td{
+	padding: 0px 10px;
+} */
+
+#menuArea{
+	position: relative;
+	margin-top: 50px;
+}
+
+#menuArea h1 {
+	font-family: 'SCDream', sans-serif;
+    font-weight: bold;
+    color: #272a44;
+	margin-bottom: 30px;
+}
+
+#subMenu{
+	overflow: hidden;
+}
+
+#subMenu li {
+	width: 16.66%;
+	float: left;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-left: 0;
+	text-align: center;
+}
+
+#subMenu li:first-child{
+	border-left: 1px solid #ddd;
+}
+
+#subMenu .menuLink {
+	color: #272a44;
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+#subMenu .menuLink:hover {
+	color: #fff;
+	background-color: #ffcc4a;
+}
+
+#search {
+	z-index: 888;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 20px;
+}
+
+#search select{
+	height: 30px;
+}
+
+.title{
+	font-family: 'SCDream', sans-serif;
+    font-weight: bold;
+    color: #272a44;
+	margin:150px 0 30px 0;
+}
+
+#keyword {
+	width: 200px;
+    height: 30px;
+}
+
+
+.outerTable td {
+	text-align: center;
+}
+
+.outerTable td.eachClass{
+	float: left;
+	width: 20%;
+}
+
+.innerTable tr{
+	height: auto;
+}
+
+.className{padding: 10px 0 5px 0; font-weight: 400;}
+.teacher{color: #666; font-size: 1rem; vertical-align: bottom; line-height: 2rem;}
+.listimg { width: 200px; height: 130px; }
+.classPrice{font-size: .95rem;}
+
+
+.reviewTitle{
+	font-family: 'SCDream', sans-serif;
+	margin: 50px 0 30px 0;
+	
+}
+
+.writeReview {
+	width: 100%;
+	border: 1px solid #ddd;
+}
+
+.writeReview select{
+	padding: 5px;
+}
+
+.writeReview th{
+	background: #ffcc4a;
+	font-weight: 400;
+	color: white;
+}
+
+.writeReview th, .writeReview td {
+	padding: 10px 20px;
+} 
+
+.writeReview td {
+	border-bottom: 1px solid #ddd;
+} 
+
+#content {
+	width: 100%;
+}
+
+#review_space {
+	width: 70%;
+	margin: 30px 0;
+	display: table;
+	margin: auto;
+}
+
+.review {
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid #ddd;
+}
+
+.review_tr1 {
+	height: 30%;
+}
+
+.review th {
+	background-color: orange;
+	width: 10%;
+}
+.review_td {
+	text-align: center;
+}
+.review_tr2 {
+	text-align: left;
+}
+
+.review_td3 {
+	text-align: center;
+	width: 10%;
+}
+.review_td_num {
+	text-align: center;
+	width: 10%
+}
+
+.review_td_grade {
+	text-align: center;
+	width: 10%
+}
+
+table tfoot {
+	text-align: center;
+	margin: auto;
+}
+
+#paging {
+	display: table;
+    margin: 10px auto;
+}
+
+table caption {
+	height : 50px;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"]{
+    background-color: #ffcc4a;
+    padding: 8px 20px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover{
+    background-color: #272a44;
+    color: white;
+}
+
+.detailTable {
+	border: 1px solid #ddd;
+	width: 100%;
+}
+
+.detailTable th{
+	text-align: left;
+	background: #ffcc4a;
+	color: white;
+}
+
+.detailTable td{
+	border-bottom: 1px solid #ddd;
+}
+
+.detailTable th, .detailTable td{
+	padding: 10px 20px;
+}
+
+
+.detailTable input{
+	font-size: 18px;
+}
+
+#tableImg{
+	text-align: center;
+	border-bottom: 0;
+}
+
+
+textarea {
+	width: 100%;
+    font-size: 18px;
+}
+
+select {
+	font-size: 15px;
+}
+
+table caption{
+	font-size: 25px;
+    font-weight: bold;
+    color: #ff7756;
+}
+
+#form {
+	margin: 30px 0;
+}
+
+/* myCart */
+#tableSpace {
+	display: table;
+    margin: 150px auto 100px;
+    width: 70%;
+}
+
+.cartTitle{
+	font-family: 'SCDream', sans-serif;
+    font-weight: bold;
+    color: #272a44;
+	margin-bottom: 30px;
+	text-align:left;
+}
+
+#cart th, #cart td{
+	border: 1px solid #ddd;
+} 
+
+#cart th{
+	padding: 10px;
+}
+
+#cart td{
+	font-size: 16px;
+}
+
+#cart td a{
+	padding-left: 10px;
+}
+
+table{
+	width: 100%;
+	margin: 20px 0;
+}
+
+/* table, table tr, table td, table th {
+	border: 1px solid orange;
+} */
+
+.center {
+	text-align: center;
+}
+
+.ten {
+	width: 5%;
+}
+
+.cartDelete{
+	width: 15%;
+}
+
+.twenty {
+	width: 20%;
+}
+
+.five {
+	width: 5%;
+}
+
+#totalArea{
+	text-align: right;
+}
+
+.right {
+	text-align: right;
+}
+
+#totalPrice {
+	font-size: 20px;
+	width: 150px;
+	text-align: right;
+	margin: 7px;
+}
+
+#paybutton {
+	margin: 10px;
+    background-color: orange;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+#upReview {
+	width: 70%;
+	display: table;
+	margin: 150px auto 100px;
+}
+
+#upReview th, #upReview td{
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+#review_space{
+	width: 100%;
+}
+
+.review th, .review td{
+	padding: 10px 20px;
+}
+
+.review th{
+	background: #ffcc4a;
+	color: white;
+	font-weight: 400;
+}
+
+.review td{
+	border-bottom: 1px solid #ddd;
+}
+
+#insertBottonArea {
+	text-align: right;
+	width: 90%;
+	margin: 0 auto;
+}
+
+#insertBottonArea input, #ButtonArea input {
+	background-color: #ffcc4a;
+	color: white;
+}
+
+#insertBottonArea input:hover, #ButtonArea input:hover {
+	background-color: #ff7756;
+	color: white;
+}
+
+#price {
+	text-align: right;
+	font-size: 20px;
+}
+
+#su_name {
+	width: 100%;
+	font-size: 20px;
+}
+
+#code, #teacher {
+	font-size: 18px;
+}
+
+#ButtonArea {
+	text-align: right;
+	width: 100%;
+	margin: 10px;
+}
+
+#paymentForm .pay{
+	margin-top: 50px;
+}
+
+#paymentForm {
+	width: 80%;
+    margin: 150px auto 100px;
+}
+
+#paymentForm th, #paymentForm td{
+	border: 1px solid #ddd;
+	padding: 15px 20px;
+}
+
+#paymentForm .pay th{
+	text-align: left;
+}
+
+#paymentForm th{
+	font-weight: 400;
+}
+
+#paymentForm td{
+	font-size: 16px;
+}
+
+#paymentForm td select{
+	width: 100%;
+}
+
+.fifteencenter{
+	width: 15%;
+	text-align: center;
+}
+
+.thirtyright {
+	width: 30%;
+	text-align: right;
+}
+
+.card, .date, .birth{
+	width: 80px;
+	height: 30px;
+	font-size: 18px;
+}
+
+.card{
+	padding: 0 10px;
+}
+
+.date {
+	width: 40px;
+	text-align: right;
+}
+
+.name{
+	font-size: 18px;
+}
+
+#payment_ok{
+	width : 80%;
+	margin : 150px auto 100px;
+	text-align: center;
+}
+
+#payment_ok table{
+	margin : auto;
+}
+
+#payment_ok table th, #payment_ok table td{
+	border: 1px solid #ddd;
+	padding: 15px 20px;
+}
+
+
+.first{
+	background-color: #FECC49;
+	width: 10%;
+	color:#fff;
+}
+
+.price {
+	text-align: right;
+    width: 30%;
+}
+
+
+#payment_ok input {
+	margin: 30px;
+}
+
+#paybuttonArea {
+	text-align: right;
+	width: 100%;
+}
+

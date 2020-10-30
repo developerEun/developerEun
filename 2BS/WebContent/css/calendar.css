@@ -1,0 +1,213 @@
+.inner {
+	width: 1200px;
+	margin: 150px auto 100px;
+}
+
+.backImg{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-image:url(../img/background1.png), url(../img/background2.png);
+	background-position: right 50px bottom -5px, left bottom -10px;
+	background-repeat: no-repeat, no-repeat;
+	background-size: 20%;
+	bottom: 0;
+	opacity: .15;
+	z-index: -1;
+}
+
+.todoBtnWrap {
+	display: inline-block;
+	cursor: pointer;
+	max-width: 80%;
+	color: white;
+	padding: .5rem;
+	border-radius: .5rem;
+	font-size: .8rem;
+	margin-bottom: .3rem;
+}
+
+.todoBtnWrap .close {
+	color: white;	
+	float: right;
+	font-weight: 100;
+	margin-left: .5rem;
+}
+
+.todoBtnWrap.orange {
+	background: orange;
+}
+
+.todoBtnWrap.skyBlue {
+	background: skyblue;
+}
+
+.todoBtnWrap.yellowgreen {
+	background: olivedrab;
+}
+
+.todoBtnWrap .todoBtn{
+	max-width: 80%;
+	vertical-align: middle;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.darkScreen {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: .8;
+}
+
+#myCalendar {
+	width: 100%;
+	border: 1px solid #ddd;
+	table-layout: fixed;
+}
+
+#myCalendar caption {
+	margin: 2rem;
+	font-size: 1.5rem;
+}
+
+#myCalendar th {
+	padding: 1rem;
+	font-weight: 400;
+}
+
+#myCalendar td {
+	vertical-align: top;
+	border: 1px solid #ddd;
+	padding: 1.5rem 1rem 1.5rem 1.5rem;
+	height: 7rem;
+}
+
+#myCalendar td.null {
+	cursor: pointer;
+	background: url(../img/moreBtn.png) no-repeat center center;
+	background-color: #00000080;
+}
+
+#myCalendar td dl {
+	height: 8rem;
+	overflow: auto;
+	padding-right: .5rem;
+}
+
+#myCalendar td dl::-webkit-scrollbar{ 
+	height:0.15rem; width:0.15rem; 
+}
+
+#myCalendar td dt {
+	margin-bottom: .8rem;
+}
+
+#myCalendar td dt span{
+	vertical-align: middle;
+	font-weight: 400;
+}
+
+#myCalendar td dt .moreAddTodo{
+	display: none;
+	float: right;
+	font-weight: 600;
+	font-size: 1.2em;
+	color: orange;
+}
+
+#myCalendar td dd {
+	font-size: 0;
+}
+
+#myCalendar th:first-child, #myCalendar td:first-child dt {
+	color: red;
+}
+
+#myCalendar th:last-child, #myCalendar td:nth-child(7) dt {
+	color: blue;
+}
+
+.detailPop {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 30rem;
+	background: white;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+.popHeader {
+	background: #ff8400;
+	color: #fff;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+
+.popBody {
+	padding: 0 1rem;
+	margin-bottom: 1rem;
+}
+
+.popBody dt, .popBody dd {
+	font-size: 0;
+}
+
+.popBody label {
+	display: inline-block;
+	font-size: 1rem;
+	width: 10%;
+}
+
+.popBody .todoTitle {
+	margin: .8rem 0;
+}
+
+.popBody .todoText label {
+	vertical-align: top;
+	margin-top: .5rem;
+}
+
+.popBody input[type="text"], .detailPop textarea {
+	display: inline-block;
+	border: 1px solid #ddd;
+	font-size: 1rem;
+	padding: .5rem;
+	box-sizing: border-box;
+	width: 90%;
+}
+
+.btnWrap {
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+.btnWrap input[type="button"] {
+	width: 48%;
+	float: left;
+	text-align: center;
+	background: #ff8400;
+	padding: .6rem;
+	border-radius: .5rem;
+	color: #fff;
+}
+
+.btnWrap input[type="button"].send{
+	display: none;
+}
+
+.btnWrap input[type="button"]:last-child {
+	margin-left: 4%;
+	background: #272a44;
+}

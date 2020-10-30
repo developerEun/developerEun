@@ -1,0 +1,30 @@
+nav.fix{position: fixed; left: 0; top: 0; width: 100%; z-index: 999;}
+.header{width: 100%; position: absolute; left: 0; top:0; padding: 0 50px; background: white; box-sizing: border-box; box-shadow: 1px 1px 3px #ddd;}
+.header h1{width: 80px; height: 56px; display: inline-block; vertical-align: middle;}
+.header h1 a{display: block; width: 100%; height: 100%; background: url(../img/logo1.png) no-repeat 50% 50%; background-size: contain; font-size: 0;}
+
+.header .menu{display: inline-block; vertical-align: middle; width: 40%; padding: 0 20px; box-sizing: border-box;}
+.header .menu li{display: inline-block;}
+.header .menu li a{display: inline-block; height: 100px; padding: 0 20px; line-height: 100px; font-weight: 400; box-sizing: border-box;}
+.header .menu .on a{border-bottom: 3px solid #ffcc4a;}
+
+.header .userInfo{float: right; line-height: 100px; position: relative; z-index: 10; }
+.myStudy{opacity: 0; position: absolute; left: -100px; top: 80%; width: 200px; margin: 0 auto; padding: 15px; background: #272a44;}
+.userName:hover ~ .myStudy{opacity: 1;}
+.myStudy h3{font-weight: 400; margin-bottom: 10px; font-size: 1.1rem; color: #ffcc4a;}
+.myStudy h3 a{float: right; font-weight: 400; color: #ffcc4a; font-size: 1.1rem;}
+.myStudy .imfoMsg{font-size: .6rem; font-weight: 600; color:#626583; margin-top: 15px;}
+.myStudy li{margin-bottom: 5px;}
+.myStudy li .studyTitle{font-size: .85rem; line-height: 1.2rem; color: #c1c3d2;}
+.myStudy li .studyDate{font-size: .8rem; color: #626583;}
+
+.menuContents li{display: none; z-index: 10; position: absolute; top: 100px; left:0; width: 100%; height: 300px; border-top: 1px solid #ddd; background: white;}
+.contentWrap{width: 70%; margin: 0 auto; padding: 30px 0; height: 100%; box-sizing: border-box; background: url(../img/back3.png) no-repeat right 15% bottom 30px; background-size: 300px;}
+
+.menuContents li.active{display: block;}
+.menuContents li dl{width: 20%; display: inline-block; height: 100%;}
+.menuContents li dt{font-size: 1.3rem; font-weight: 600; margin-bottom: 20px;}
+.menuContents li a{color: #999; line-height: 2rem;}
+
+.header .bar{color: #aaa; padding: 0 10px;}
+.header .logout{color: #ffcc4a;}

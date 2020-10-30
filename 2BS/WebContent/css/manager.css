@@ -1,0 +1,119 @@
+header {
+	background: #272a44;
+	width: 250px;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+section {
+	background: white;
+	width: calc(100% - 250px);
+	height: 100%;
+	position: fixed;
+	left: 250px;
+	top: 0;
+	overflow: auto;
+}
+
+header .title {
+	text-align: center;
+	margin: 30px 0;
+}
+
+header .title img {
+	width: 60%;
+}
+
+header .title p {
+	color: white;
+	font-size: 1rem;
+	line-height: 20px;
+	margin-top: 20px;
+}
+
+header .title a {
+	display: inline-block;
+	color: white;
+	font-size: .8rem;
+	padding: 10px;
+	background: #3e415a;
+	margin-top: 20px;
+	letter-spacing: 0.1rem;
+}
+
+#menu li a {
+	display: inline-block;
+	width: 100%;
+	color: white;
+	padding: 25px;
+	border-bottom: 1px solid #4e5279;
+	box-sizing: border-box;
+}
+
+#menu .active a {
+	font-weight: bold;
+	background: #505582;
+}
+
+.login {
+	background-color: #272a44;
+}
+
+.login h1 {
+	width: 30%;
+	position: absolute;
+	bottom: 55%;
+	left: 50%;
+	text-align: center;
+	transform: translateX(-50%);
+}
+
+.loginInfo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 300px;
+	padding: 20px;
+}
+
+.loginInfo label {
+	display: inline-block;
+	color: white;
+	width: 100%;
+	font-weight: 400;
+}
+
+.loginInfo .inputText {
+	color: white;
+	background: #2e314d;
+	padding: 10px;
+	width: 100%;
+	margin: 10px 0 20px 0;
+	box-sizing: border-box;
+	font-size: 1rem;
+}
+
+.loginBtn {
+	width: 100%;
+	background: #ffcc4a;
+	color: white;
+	font-weight: 400;
+	padding: 10px;
+	font-size: 1rem;
+}
+
+.loginBtn:hover {
+	background: white;
+	color: #ffcc4a;
+}
+
+.loginInfo span {
+	font-size: .8rem;
+	color: #595c76;
+	margin-top: 50px;
+	display: block;
+	text-align: center;
+}
