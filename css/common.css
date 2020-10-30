@@ -56,10 +56,10 @@ header{ position: absolute; width:100%; top:28px; z-index:999; padding: 0 80px; 
 .swiper-slide .mouseover dl{ position:absolute; left:50%; transform: translateX(-50%); width:100%; text-align:center; bottom:110px; color:#fff; }
 .swiper-slide .mouseover dt{ font-size: 48px; }
 .swiper-slide .mouseover dd{ font-size: 18px; font-weight: 300; margin-top: 20px; line-height: normal; }
-.swiper-slide:first-child .slide-wrap{ background-image: url('../images/2bs.jpg'); }
+.swiper-slide:first-child .slide-wrap{ background-image: url('../images/withwork.jpg'); }
 /* .swiper-slide:first-child .mouseover{ background: rgba(165, 29, 54, .7); } */
 
-.swiper-slide:nth-child(2) .slide-wrap{ background-image: url('../images/withwork.jpg'); }
+.swiper-slide:nth-child(2) .slide-wrap{ background-image: url('../images/2bs.jpg'); }
 /* .swiper-slide:nth-child(2) .mouseover{ background: rgba(218, 54, 61, .7); } */
 
 /* ABOUT */
