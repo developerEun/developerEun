@@ -4,7 +4,7 @@
 /* basic */
 * { margin:0; padding:0; border:0; font-family: 'Lato', 'NanumSquare', sans-serif !important; letter-spacing:-0.025em; line-height: 100%; }
 html, body { width:100%;}
-body { margin:0; padding:0; font-size: 14px; color:#000; background: #000; font-family: 'Lato', 'NanumSquare', sans-serif; }
+body { margin:0; padding:0; font-size: 14px; color:#fff; background: #000; font-family: 'Lato', 'NanumSquare', sans-serif; }
 label, input, button, select { vertical-align:middle; }
 input{background:transparent;}
 input, button { margin:0; padding:0; font-family: 'Lato', 'NanumSquare', sans-serif !important; font-size:1em; }
@@ -25,8 +25,8 @@ select::-ms-expand { display: none; }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
 
 /* 링크 */
-a:link, a:visited { color:#000; text-decoration:none; }
-a:hover, a:focus, a:active { color:#000; text-decoration:none; }
+a:link, a:visited { color:#fff; text-decoration:none; }
+a:hover, a:focus, a:active { color:#fff; text-decoration:none; }
 
 /* 기타설정 */
 img { max-width:100%; vertical-align:top; }

@@ -3,148 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/fullpage.js"></script>
     <script src="js/swiper.min.js"></script>
-    <title>개발자 최은서입니다.</title>
+    <script src="js/swiper.animate1.0.3.min.js"></script>
+    <title>Eunseo's Portfolio</title>
 </head>
 <body>
     <header>
-        <h1 id="logo"><a href="#none">Eunseo's Portfolio</a></h1>
-        <div class="gnb">
-            <img src="images/gnb_dot.png" class="top" alt="">
-            <img src="images/gnb_dot.png" class="left" alt="">
-            <img src="images/gnb_dot.png" class="right "alt="">
-            <img src="images/gnb_dot.png" class="bottom" alt="">
-        </div>
+        <ul>
+            <li><a href="#">ABOUT ME</a></li>
+            <li><a href="#">PROJECT</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
     </header>
     <section>
-        <div id="wrap">
-            <!-- ABOUT -->
-            <div class="about">
-                <div class="image">
-                    <div class="me"></div>
-                </div>
-                <div class="text">
-                    <div class="text-wrap">
-                        <h3>WEB PUBLISHER</h3>
-                        <h1>COOL<br/>COMFORT</h1>
-                        <dl class="txt">
-                            <dt>두려움을 자신감으로<br/>승화하는 개발자, 최은서</dt>
-                            <dd>
-                                저는 자신감과 융통성을 토대로 다양한 시도와 경험을 하는<br/>
-                                열정을 가졌으며 타인의 입장을 배려하고 공감하는<br/>
-                                개발자 입니다.
-                            </dd>
-                            <dd>
-                                단순히 시각적으로 보이는 페이지를 만드는 것이 아니라<br/>
-                                사용자를 고려하여 더 효율적인 환경을 생각하며<br/>
-                                소스를 디자인하는 개발자 입니다.
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-            <!-- // ABOUT -->            
-            <!-- PORTFOLIO -->
-            <div class="portfolio">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        <a href="https://github.com/developerEun/developerEun.github.io/tree/main/project/2BS" target="_blank" class="swiper-slide" data-group="work">
-                            <div class="slide-wrap">
-                                <div class="mouseover">
-                                    <dl>                                
-                                        <dt>2BS</dt>
-                                        <dd>Java, Jsp, Oracle, jQuery를<br/>사용하여 제작한 교육 관련 사이트</dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="https://github.com/developerEun/developerEun.github.io/tree/main/project/withWork" target="_blank" class="swiper-slide" data-group="work">
-                            <div class="slide-wrap">
-                                <div class="mouseover">
-                                    <dl>
-                                        <dt>WithWork</dt>
-                                        <dd>Java, Spring, Oracle, jQuery<br/>사용하여 제작한 협업에 용이한 사이트</dd>        
-                                    </dl>
-                                </div>
-                            </div>
-                        </a>
-                    </div>  
-                </div>
-            </div>
-            <!-- // PORTFOLIO -->
-            <!-- CONTACT -->
-            <div class="contact">
-                <div class="contact-wrap">
-                    <dl class="info-text">
-                        <dt>안녕하세요! 저는 ‘개발자 최은서’입니다.</dt>
-                        <dd>
-                            저는 긍정적이고 활발하며 맡은 일에 최선을 다하는 성실한 성격입니다.<br/>
-                            또한 사람들과 잘 지내며 다양한 상황에 유연하게 대처하는 능력을 가졌습니다.<br/>
-                            저와 함께 프로젝트를 이끌어 나갈 회사를 찾고 있습니다.
-                        </dd>
-                        <dd>언제든지 연락주세요!</dd>
-                    </dl>
-                    <div class="contact-text">
-                        <a href="mailto:sseung0000@naver.com" title="메일쓰기"><img src="images/e-mail.png" alt=""></a>
-                        <a href="tel:010-3030-1734" title="전화걸기"><img src="images/call.png" alt=""></a>
-                    </div>
-                    <!-- <div class="contact-sns">
-                        <a href="#none"><img src="images/linkedin.png" alt=""></a>
-                        <a href="https://www.behance.net/sseung0000170d" target="_blank"><img src="images/behance.png" alt=""></a>
-                        <a href="https://www.pinterest.co.kr/dptmejf/" target="_blank"><img src="images/pinterest.png" alt=""></a>
-                    </div> -->
-                    <span class="copyright">© 2020 ES.CHOI DESINGER ALL RIGHTS RESERVED.</span>
-                </div>
-            </div>
-            <!-- // CONTACT -->
-            <!-- GNB 선택창 -->
-            <div class="gnb-box">
-                <div class="line"></div>
-                <div class="gnb-wrap">
-                    <ul class="nav">
-                        <li><a href="#none">ABOUT</a></li>
-                        <li class="depth-02">
-                            <a href="#none">PORTFOLIO</a>
-                            <!-- <ul>
-                                <li><a href="#none">ALL <sup>12</sup></a></li>
-                                <li class="work"><a href="#none">WORK <sup>9</sup></a></li>
-                                <li class="person"><a href="#none">PERSONAL <sup>3</sup></a></li>
-                            </ul> -->
-                        </li>
-                        <li><a href="#none">CONTACT</a></li>
+        <div id="fullpage">
+            <div class="section" id="section0">
+                <div class="typing-txt"> 
+                    <ul>
+                        <li>Hello</li>
+                        <li>I'm new developer</li>
                     </ul>
-                    <div class="info">
-                        <dl>
-                            <dt>PHONE</dt>
-                            <dd onclick="document.location.href='tel:010-2247-2987'" title="전화걸기" class="pointer">010.2247.2987</dd>
-                        </dl>
-                        <dl>
-                            <dt>E-MAIL</dt>
-                            <dd onclick="location.href='mailto:euns2eo@naver.com'" title="메일쓰기" class="pointer">euns2eo@naver.com</dd>
-                        </dl>
-                        <dl>
-                            <dt>ADDRESS</dt>
-                            <dd>Seoul Gwanak-gu</dd>
-                        </dl>
-                        <!-- <div class="sns">
-                            <a href="#none"><img src="images/linkedin.png" alt=""></a>
-                            <a href="https://www.behance.net/sseung0000170d" target="_blank"><img src="images/behance.png" alt=""></a>
-                            <a href="https://www.pinterest.co.kr/dptmejf/" target="_blank"><img src="images/pinterest.png" alt=""></a>
-                        </div> -->
+                </div> 
+                <div class="typing">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div> 
+                <div class='icon-scroll'></div>
+            </div>
+            <div class="section" id="section1">
+                <dl class="aboutme">
+                    <dt>
+                        <p class="name">CHOI<br>EUNSEO<br></p>
+                        <p class="greet">
+                            안녕하세요, ―――――<br/>
+                            신입 개발자 최 은서입니다.
+                        </p>
+                    </dt>
+                    <dd class="info">
+                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅  웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                    </dd>
+                    <dd class="skipBtn">프로젝트 바로가기</dd>
+                </dl>
+                <div class="aboutInfo">
+                    <dl>
+                        <dt>BIRTH</dt>
+                        <dd>
+                            <ul>
+                                <li>1997.02.19일생</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>EDUCATION</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    2016. 03 ~ 2019. 08 경남정보대학 방송영상과 졸업
+                                </li>
+                                <li class="mobile">
+                                    2016. 03 ~ 2019. 08<br/>경남정보대학 방송영상과 졸업 
+                                </li>
+                                <li>
+                                    2018. 03 ~ 2018. 07 더조은아카데미 퍼블리셔 과정 이수
+                                </li>
+                                <li class="mobile">
+                                    2018. 03 ~ 2018. 07<br/>더조은아카데미 퍼블리셔 과정 이수
+                                </li>
+                                <li>
+                                    2019. 10 ~ 2019. 12 더조은아카데미 야간 JAVA  과정 이수
+                                </li>
+                                <li class="mobile">
+                                    2019. 10 ~ 2019. 12<br/>더조은아카데미 야간 JAVA  과정 이수
+                                </li>
+                                <li>
+                                    2020. 04 ~ 2019. 10 비트교육센터 웹 개발자 과정 이수
+                                </li>
+                                <li class="mobile">
+                                    2020. 04 ~ 2019. 10<br/>비트교육센터 웹 개발자 과정 이수
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>WORK</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    2018. 09 ~ 2020. 01 주식회사 다름 퍼블리싱팀 근무
+                                </li>
+                                <li class="mobile">
+                                    2018. 09 ~ 2020. 01<br/>주식회사 다름 퍼블리싱팀 근무
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>USED TOOLS</dt>
+                        <dd>
+                            <div class="zt-skill-bar">
+                                <div data-width="60">JAVA<span>60%</span>
+                                </div>
+                            </div>
+                            <div class="zt-skill-bar">
+                                <div data-width="77">HTML<span>77%</span>
+                                </div>
+                            </div>
+
+                            <div class="zt-skill-bar">
+                                <div data-width="80">SPRING<span>80%</span>
+                                </div>
+                            </div>
+                            <div class="zt-skill-bar">
+                                <div data-width="88">CSS<span>88%</span>
+                                </div>
+                            </div>
+                            <div class="zt-skill-bar">
+                                <div data-width="40">ORACLE<span>40%</span>
+                                </div>
+                            </div>
+                            <div class="zt-skill-bar">
+                                <div data-width="90">JQEURY<span>90%</span>
+                                </div>
+                            </div>
+                            <div class="zt-skill-bar">
+                                <div data-width="89">JAVASCRIPT<span>89%</span>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="section active" id="section2">
+                <div class="mainRolling">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="projectInfo">
+                                    <div class="swiperTit">
+                                        <dl>
+                                            <dt>2BS</dt>
+                                            <dd>교육관련 강의 사이트</dd>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                        <div class="btnBox">
+                                            <a href="#">기능 설명</a>
+                                            <a href="#">소스 보기</a>
+                                        </div>
+                                    </div>
+                                    <div class="swiperTxt">
+                                        <dl>
+                                            <dt>개발 인원</dt>
+                                            <dd>4명</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>개발 도구</dt>
+                                            <dd>웅앵웅웅앵웅웅앵웅</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>주제선정 이유</dt>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>맡은 부분</dt>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>어려웠던 점</dt>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="projectInfo">
+                                    <div class="swiperTit">
+                                        <dl>
+                                            <dt>WITHWORK</dt>
+                                            <dd>협업에 용이한 사이트</dd>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                        <div class="btnBox">
+                                            <a href="#">기능 설명</a>
+                                            <a href="#">소스 보기</a>
+                                        </div>
+                                    </div>
+                                    <div class="swiperTxt">
+                                        <dl>
+                                            <dt>개발 인원</dt>
+                                            <dd>4명</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>개발 도구</dt>
+                                            <dd>웅앵웅웅앵웅웅앵웅</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>주제선정 이유</dt>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>맡은 부분</dt>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>어려웠던 점</dt>
+                                            <dd>
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination_main">
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- // GNB 선택창 -->            
         </div>
     </section>
+    <script>
+       var slides = $('.swiper-slide');
+       var mySwiper = new Swiper('.swiper-container', {
+           spaceBetween: 0,
+           centeredSlides: true,
+           pagination: {
+               el: '.swiper-pagination_main',
+               clickable: true,
+           },
+           on: {
+               init: function(){
+                   swiperAnimateCache(this);
+                   swiperAnimate(this);
+                   $(".swiper-slide-prev, .swiper-slide-next").removeClass("animate");
+                   $(".swiper-slide-active").addClass("animate");
+               },
+               slideChangeTransitionEnd: function(){ 
+               swiperAnimate(this);
+               $(".swiper-slide-prev, .swiper-slide-next").removeClass("animate");
+               $(".swiper-slide-active").addClass("animate");
+               }
+           } 
+       }); 
+
+        if ($(window).width() < 1024) {
+        }
+        else {
+            var myFullpage = new fullpage('#fullpage', {
+            lazyLoad: true,
+            onLeave: function(origin, destination, direction){
+                var params = { destination:destination };
+                if ( params["destination"]["index"] > 0 ){
+                    $("header").addClass("fix");
+                } else {
+                    $("header").removeClass("fix");
+                }
+            }   
+            });
+        }
+
+
+        var typingBool = false; 
+        var typingIdx=0; 
+        var liIndex = 0;
+        var liLength = $(".typing-txt>ul>li").length;
+
+        // 타이핑될 텍스트를 가져온다 
+        var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+        typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+        if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+            typingBool=true; 
+            var tyInt = setInterval(typing,100); // 반복동작 
+        } 
+            
+        function typing(){ 
+        $(".typing ul li").removeClass("on");
+        $(".typing ul li").eq(liIndex).addClass("on");
+        if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+            $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+            typingIdx++; 
+        } else{ if(liIndex<liLength-1){
+            //다음문장으로  가기위해 인덱스를 1증가
+            liIndex++; 
+            //다음문장을 타이핑하기위한 셋팅
+                typingIdx=0;
+                typingBool = false; 
+                typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+            
+            //다음문장 타이핑전 1초 쉰다
+                clearInterval(tyInt);
+                //타이핑종료
+            
+                setTimeout(function(){
+                //1초후에 다시 타이핑 반복 시작
+                tyInt = setInterval(typing,100);
+                },1000);
+                } else if(liIndex==liLength-1){
+                
+                //마지막 문장까지 써지면 반복종료
+                clearInterval(tyInt);
+                }
+            } 
+        }  
+
+        (function( $ ) {
+            "use strict";
+            $(function() {
+                function animated_contents() {
+                    $(".zt-skill-bar > div ").each(function (i) {
+                        var $this  = $(this),
+                            skills = $this.data('width');
+
+                        $this.css({'width' : skills + '%'});
+
+                    });
+                }
+                
+                if(jQuery().appear) {
+                    $('.zt-skill-bar').appear().on('appear', function() {
+                        animated_contents();
+                    });
+                } else {
+                    animated_contents();
+                }
+            });
+        }(jQuery));
+    </script>
 </body>
 </html>
