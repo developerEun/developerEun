@@ -19,6 +19,10 @@ header ul li{
     line-height: 75px;
 }
 
+header ul li.active a{
+    color: #ff8400;
+}
+
 header ul li:last-child{
     margin-right: 0;
 }
@@ -29,11 +33,6 @@ header ul li a{
     font-size: 16px;
     font-weight:200;
     transition: all .5s;
-    
-}
-
-header ul li a:hover{
-    color: #aaf0d1;
 }
 
 section{
@@ -155,16 +154,6 @@ section{
     color: #aaa; 
 }
 
-#section1 .aboutme dd.skipBtn{
-    margin-top: 100px;
-    border: 1px solid #ddd;
-    width: 150px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 22.5px;
-    cursor: pointer;
-}
 
 #section1 .aboutInfo{
     width: calc(70% - 100px);
@@ -327,7 +316,8 @@ section{
 
 .swiperTit .btnBox a:first-child{
     margin-right: 4%;
-    background: #6a9582;
+    background: #ff8400;
+    color: #fff;
 }
 
 .swiperTit .btnBox a{
@@ -335,10 +325,13 @@ section{
     font-size: 14px;
     width: 48%;
     text-align: center;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 20px;
-    background: #122d21;
+    height: 45px;
+    line-height: 43px;
+    border-radius: 22.5px;
+    background: transparent;
+    color: #ff8400;
+    border: 1px solid #ff8400;
+    box-sizing: border-box;
 }
 
 .swiperTit dt{
@@ -385,9 +378,126 @@ section{
     transition-duration: .5s;
 }
 
+#section3{
+    padding: 100px 150px 0 150px;
+    box-sizing: border-box;
+    background: url(../img/contact04.jpg) no-repeat center left;
+    background-size: cover;
+    position: relative;
+}
+
+#section3 .contact{
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+}
+
+#section3 p{
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 3px;
+}
+
+#section3 dl{
+    margin-top: 30px;
+}
+
+#section3 dl dt{
+    display: inline-block;
+    margin-bottom: 20px;
+
+}
+
+#section3 dl dd{
+    line-height: 20px;
+    color: #ddd;
+}
+
+#section3 dl dd:last-child{
+    margin-top: 20px;
+}
+
+#section3 .imgBox{
+    margin-top: 30px;
+    width: 100%;
+    height: 350px;
+}
+
+#section1 .aboutme dd.skipBtn{
+    margin-top: 50px;
+}
+
+.btn--base{
+    overflow:hidden; 
+    transition:all .5s;
+}
+
+.btn--base,.btn--base .btn__inner{
+    position:relative; 
+    display:inline-block;
+    border-radius:25px; 
+    box-shadow:inset 0 0 0 1px #fff;
+}
+
+.btn--base .btn__inner{
+    z-index:1; 
+    font-size:14px; 
+    font-weight:300; 
+    color:#fff;
+    text-align:center; 
+    width:160px; 
+    height:45px; 
+    line-height:45px; 
+    transition:color .5s; 
+}
+
+.btn--base:hover .btn__inner{box-shadow:none;}
+
+.btn--base .btn__ink{
+  position:absolute; 
+  display:block; 
+  background:#ff8400;
+  animation:c .45s;
+  animation-fill-mode:forwards;
+  min-width:160px;
+  min-height:45px;
+  opacity:0;
+  transition:opacity .3s;}
+  
+.btn--base.bg04 .btn__ink{
+  background:#ffe680;}
+.btn--base.bg04:hover .btn__inner{color:#d2593a; box-shadow:none;}
+
+.btn--base .btn__ink--active{
+  animation:b .5s;
+  animation-fill-mode:forwards;
+  opacity:1;
+  transition:none;
+}
+
+@-webkit-keyframes b{0%{-webkit-transform:scale(0);transform:scale(0)}100%{-webkit-transform:scale(2.5);transform:scale(2.5)}}
+
+@keyframes b{0%{-webkit-transform:scale(0);transform:scale(0)}
+100%{-webkit-transform:scale(2.5);transform:scale(2.5)}}
+
+@-webkit-keyframes c{0%{-webkit-transform:scale(2.5);transform:scale(2.5)}100%{-webkit-transform:scale(0);transform:scale(0)}}
+
+@keyframes c{0%{-webkit-transform:scale(2.5);transform:scale(2.5)}100%{-webkit-transform:scale(0);transform:scale(0)}}
+
+
 @media (max-width: 1024px) {
-    #section0{
-        height: 100vh;
+    .mainRolling .swiper-slide{
+        height: auto !important;
+    }
+    
+    #section1, #section1 .fp-tableCell, #section2, #section2 .fp-tableCell{
+        height: auto !important;
+    }
+    
+    #section0, #section0 .fp-tableCell, #section3, #section3 .fp-tableCell{
+        height: 100vh !important;
     }
 
     #section0 .typing{
@@ -407,6 +517,7 @@ section{
     .mainRolling .projectInfo{
         position: sticky;
         transform: translateY(0);
+        top: 0;
     }
 
     .swiperTit{
@@ -423,6 +534,10 @@ section{
 
     .mainRolling .swiper-pagination_main{
         bottom: 30px;
+    }
+
+    #section3{
+        height: 100vh;
     }
 }
 
@@ -489,6 +604,15 @@ section{
     header ul{
         display: none;
     }    
+
+    .mainRolling .projectInfo{
+        padding: 30px 30px 100px 30px;
+    }
+
+    #section3 .contact{
+        bottom: 50px;
+        left: 30px;
+    }
 
 }
 

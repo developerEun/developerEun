@@ -11,11 +11,13 @@
     <script src="js/fullpage.js"></script>
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper.animate1.0.3.min.js"></script>
+    <script src="js/btn.js"></script>
     <title>Eunseo's Portfolio</title>
 </head>
 <body>
-    <header>
+    <header id="fp-nav">
         <ul>
+            <li><a href="#">HOME</a></li>
             <li><a href="#">ABOUT ME</a></li>
             <li><a href="#">PROJECT</a></li>
             <li><a href="#">CONTACT</a></li>
@@ -48,12 +50,14 @@
                         </p>
                     </dt>
                     <dd class="info">
-                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                        웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅  웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                        사람들이 제가 개발한 웹을 이용하면서 만족할 때의<br/> 그 희열을 항상 기억하는, 초심을 잃지 않는 인재가 되겠습니다.
                     </dd>
-                    <dd class="skipBtn">프로젝트 바로가기</dd>
+                    <dd class="el_btn skipBtn">					
+                        <a href="#" class="btn--base">
+                            <span class="btn__ink"></span>
+                            <span class="btn__inner">프로젝트 바로가기</span>
+                        </a>
+                    </dd>
                 </dl>
                 <div class="aboutInfo">
                     <dl>
@@ -87,10 +91,10 @@
                                     2019. 10 ~ 2019. 12<br/>더조은아카데미 야간 JAVA  과정 이수
                                 </li>
                                 <li>
-                                    2020. 04 ~ 2019. 10 비트교육센터 웹 개발자 과정 이수
+                                    2019. 10 ~ 2020. 04 비트교육센터 웹 개발자 과정 이수
                                 </li>
                                 <li class="mobile">
-                                    2020. 04 ~ 2019. 10<br/>비트교육센터 웹 개발자 과정 이수
+                                    2019. 10 ~ 2020. 04<br/>비트교육센터 웹 개발자 과정 이수
                                 </li>
                             </ul>
                         </dd>
@@ -152,15 +156,15 @@
                                 <div class="projectInfo">
                                     <div class="swiperTit">
                                         <dl>
-                                            <dt>2BS</dt>
+                                            <dt>2BS<br><br>ㅡ</dt>
                                             <dd>교육관련 강의 사이트</dd>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                본 페이지는 회원가입, 로그인 후 강의를 장바구니에 담아 결제하는 기능까지 구현되어 있으며 회원의 스케쥴을 따로 관리할 수 있고 각 강의의 선생님들은 관리자페이지 에서 공지사항이나 강의를 등록하여 판매할 수 있다.
                                             </dd>
                                         </dl>
                                         <div class="btnBox">
-                                            <a href="#">기능 설명</a>
-                                            <a href="#">소스 보기</a>
+                                            <a href="file/AllFunction.jpg" download>기능 설명</a>
+                                            <a href="https://github.com/developerEun/developerEun.github.io/tree/main/project/2BS" target="_blank">소스 보기</a>
                                         </div>
                                     </div>
                                     <div class="swiperTxt">
@@ -170,29 +174,25 @@
                                         </dl>
                                         <dl>
                                             <dt>개발 도구</dt>
-                                            <dd>웅앵웅웅앵웅웅앵웅</dd>
+                                            <dd>JAVA, JSP, ORACLE, HTML, CSS, JAVASRIPT, JQEURY</dd>
                                         </dl>
                                         <dl>
                                             <dt>주제선정 이유</dt>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                첫 웹 프로젝트인만큼 CRUD 위주의 사이트를 제작하여야 학습에 많이 도움이 될 것 같아 가장 중점을 크게 두어 생각했다.
+                                                대표적으로 쇼핑몰이 있지만 그 중에서도 여러가지 기능을 더 추가하기에 적합 할 것같아 교육 쇼핑몰 사이트를 제작하게 되었다.
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>맡은 부분</dt>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                메인페이지의 전체적인 부분과 캘린더(조회, 추가, 수정, 삭제), 공지사항(조회, 추가, 수정, 삭제)을 도맡아 진행하였다. 
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>어려웠던 점</dt>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                API나 플러그인을 사용해 달력을 제작 할 수 있었지만 학습을 위해 직접 제작하여 사용하고자 직접 JAVASCRIPT와 JQUERY를 이용하여 만들었다. 화면 UI와도 레이아웃을 맞춰야 했기에 어려움을 느꼈지만 흥미가 생겨 열심히 검색하고 코딩한 결과 끝내 완성하였다.
                                             </dd>
                                         </dl>
                                     </div>
@@ -202,47 +202,48 @@
                                 <div class="projectInfo">
                                     <div class="swiperTit">
                                         <dl>
-                                            <dt>WITHWORK</dt>
+                                            <dt>WITHWORK<br><br>ㅡ</dt>
                                             <dd>협업에 용이한 사이트</dd>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                본 페이지는 회원가입, 로그인 후 그룹을 생성하거나 참여할 수 있다.
+                                                그룹 내에서 멤버 조회가 가능하며 관리자들은 멤버 추가, 수정, 삭제 권한이 주어져 전체적인 멤버 관리를 할 수 있다.
+                                                핵심 기능으로는 업무 추가, 수정, 컨펌진행을 구현하였다. 
+                                                또 그룹 내에서 진행 중인 프로젝트를 한 눈에 볼 수있으며 프로젝트 추가, 수정또한 가능하다.
+                                                효율적인 업무를 위해 채팅기능까지 구현하였다.
                                             </dd>
                                         </dl>
                                         <div class="btnBox">
-                                            <a href="#">기능 설명</a>
-                                            <a href="#">소스 보기</a>
+                                            <a href="https://youtu.be/3P-n3wj0R0E" target='_blank'>기능 설명</a>
+                                            <a href="https://github.com/developerEun/developerEun.github.io/tree/main/project/withWork" target='_blank'>소스 보기</a>
                                         </div>
                                     </div>
                                     <div class="swiperTxt">
                                         <dl>
                                             <dt>개발 인원</dt>
-                                            <dd>4명</dd>
+                                            <dd>5명</dd>
                                         </dl>
                                         <dl>
                                             <dt>개발 도구</dt>
-                                            <dd>웅앵웅웅앵웅웅앵웅</dd>
+                                            <dd>JAVA, JSP, ORACLE, SPRING, HTML, CSS, JAVASRIPT, JQEURY, AJAX</dd>
                                         </dl>
                                         <dl>
                                             <dt>주제선정 이유</dt>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                코로나 19가 확산되면서 우리 사회에서는 비대면 재택근무의 확대, 학교 수업의 온라인 강의로 전환하는 등 많은 변화들이 이어졌다.
+                                                이러한 상황속에서도 효율적인 업무를 위해 협업에 용이한 사이트를 제작하고자 주제로 선정하였다.
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>맡은 부분</dt>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                모든페이지의 UI작업과 TODO 페이지의 전체적인 일정관리(일정추가, 수정, 완료 후 컨펌진행, 일정 Drag & Drop 등)를 맡았으며,
+                                                팀원 작업물 연결작업까지 도맡아 진행하였다.
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>어려웠던 점</dt>
                                             <dd>
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
-                                                웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅웅앵웅
+                                                툴의 특성상 새로고침을 따로 하지않아도 업무들이 조회가 가능해야 하기 때문에 대부분 JSON을 이용한 AJAX 처리 방식으로 진행되었다.<br/>처음 해보는 방식이라 낯설고 많은 오류들에 부딪혔지만 적응하고 난 후에는 페이지를 넘겨 데이터를 받아오는 기존 방식보다 편리했다. 
                                             </dd>
                                         </dl>
                                     </div>
@@ -254,114 +255,134 @@
                     </div>
                 </div>
             </div>
+            <div class="section" id="section3">
+                <div class="contact">
+                    <p>THANK YOU</p>
+                    <dl>
+                        <dt>개발자 최 은서</dt>
+                        <dd>010.2247.2987</dd>
+                        <dd>co_ol@daum.net</dd>
+                        <dd>https://developereun.github.io/</dd>
+                    </dl>
+                </div>
+            </div>
         </div>
     </section>
     <script>
-       var slides = $('.swiper-slide');
-       var mySwiper = new Swiper('.swiper-container', {
-           spaceBetween: 0,
-           centeredSlides: true,
-           pagination: {
-               el: '.swiper-pagination_main',
-               clickable: true,
-           },
-           on: {
-               init: function(){
-                   swiperAnimateCache(this);
-                   swiperAnimate(this);
-                   $(".swiper-slide-prev, .swiper-slide-next").removeClass("animate");
-                   $(".swiper-slide-active").addClass("animate");
-               },
-               slideChangeTransitionEnd: function(){ 
-               swiperAnimate(this);
-               $(".swiper-slide-prev, .swiper-slide-next").removeClass("animate");
-               $(".swiper-slide-active").addClass("animate");
-               }
-           } 
-       }); 
+        $( document ).ready(function() {
+            var slides = $('.swiper-slide');
+            var mySwiper = new Swiper('.swiper-container', {
+                spaceBetween: 0,
+                centeredSlides: true,
+                pagination: {
+                    el: '.swiper-pagination_main',
+                    clickable: true,
+                },
+                on: {
+                    init: function(){
+                        swiperAnimateCache(this);
+                        swiperAnimate(this);
+                        $(".swiper-slide-prev, .swiper-slide-next").removeClass("animate");
+                        $(".swiper-slide-active").addClass("animate");
+                    },
+                    slideChangeTransitionEnd: function(){ 
+                    swiperAnimate(this);
+                    $(".swiper-slide-prev, .swiper-slide-next").removeClass("animate");
+                    $(".swiper-slide-active").addClass("animate");
+                    }
+                } 
+            }); 
 
-        if ($(window).width() < 1024) {
-        }
-        else {
             var myFullpage = new fullpage('#fullpage', {
-            lazyLoad: true,
-            onLeave: function(origin, destination, direction){
-                var params = { destination:destination };
-                if ( params["destination"]["index"] > 0 ){
-                    $("header").addClass("fix");
-                } else {
-                    $("header").removeClass("fix");
-                }
-            }   
+                lazyLoad: true,
+                responsiveWidth: 1025,
+                afterLoad: function(anchorLink, index){
+                    var idx = $("#fullpage > div.active").index();
+                    $("header ul li").removeClass("active");
+                    $("header ul li").eq(idx).addClass("active");
+                },
+                onLeave: function(origin, destination, direction){
+                    var params = { destination:destination };
+                    if ( params["destination"]["index"] > 0 ){
+                        $("header").addClass("fix");
+                    } else {
+                        $("header").removeClass("fix");
+                    }
+                    
+                }   
             });
-        }
+
+            $(".skipBtn").click(function(){
+                myFullpage.moveTo(3);
+            });
 
 
-        var typingBool = false; 
-        var typingIdx=0; 
-        var liIndex = 0;
-        var liLength = $(".typing-txt>ul>li").length;
+            var typingBool = false; 
+            var typingIdx=0; 
+            var liIndex = 0;
+            var liLength = $(".typing-txt>ul>li").length;
 
-        // 타이핑될 텍스트를 가져온다 
-        var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
-        typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
-        if(typingBool==false){ // 타이핑이 진행되지 않았다면 
-            typingBool=true; 
-            var tyInt = setInterval(typing,100); // 반복동작 
-        } 
-            
-        function typing(){ 
-        $(".typing ul li").removeClass("on");
-        $(".typing ul li").eq(liIndex).addClass("on");
-        if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
-            $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
-            typingIdx++; 
-        } else{ if(liIndex<liLength-1){
-            //다음문장으로  가기위해 인덱스를 1증가
-            liIndex++; 
-            //다음문장을 타이핑하기위한 셋팅
-                typingIdx=0;
-                typingBool = false; 
-                typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
-            
-            //다음문장 타이핑전 1초 쉰다
-                clearInterval(tyInt);
-                //타이핑종료
-            
-                setTimeout(function(){
-                //1초후에 다시 타이핑 반복 시작
-                tyInt = setInterval(typing,100);
-                },1000);
-                } else if(liIndex==liLength-1){
-                
-                //마지막 문장까지 써지면 반복종료
-                clearInterval(tyInt);
-                }
+            // 타이핑될 텍스트를 가져온다 
+            var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+            typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+            if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+                typingBool=true; 
+                var tyInt = setInterval(typing,100); // 반복동작 
             } 
-        }  
-
-        (function( $ ) {
-            "use strict";
-            $(function() {
-                function animated_contents() {
-                    $(".zt-skill-bar > div ").each(function (i) {
-                        var $this  = $(this),
-                            skills = $this.data('width');
-
-                        $this.css({'width' : skills + '%'});
-
-                    });
-                }
                 
-                if(jQuery().appear) {
-                    $('.zt-skill-bar').appear().on('appear', function() {
+            function typing(){ 
+            $(".typing ul li").removeClass("on");
+            $(".typing ul li").eq(liIndex).addClass("on");
+            if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+                $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+                typingIdx++; 
+            } else{ if(liIndex<liLength-1){
+                //다음문장으로  가기위해 인덱스를 1증가
+                liIndex++; 
+                //다음문장을 타이핑하기위한 셋팅
+                    typingIdx=0;
+                    typingBool = false; 
+                    typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+                
+                //다음문장 타이핑전 1초 쉰다
+                    clearInterval(tyInt);
+                    //타이핑종료
+                
+                    setTimeout(function(){
+                    //1초후에 다시 타이핑 반복 시작
+                    tyInt = setInterval(typing,100);
+                    },1000);
+                    } else if(liIndex==liLength-1){
+                    
+                    //마지막 문장까지 써지면 반복종료
+                    clearInterval(tyInt);
+                    }
+                } 
+            }  
+
+            (function( $ ) {
+                "use strict";
+                $(function() {
+                    function animated_contents() {
+                        $(".zt-skill-bar > div ").each(function (i) {
+                            var $this  = $(this),
+                                skills = $this.data('width');
+
+                            $this.css({'width' : skills + '%'});
+
+                        });
+                    }
+                    
+                    if(jQuery().appear) {
+                        $('.zt-skill-bar').appear().on('appear', function() {
+                            animated_contents();
+                        });
+                    } else {
                         animated_contents();
-                    });
-                } else {
-                    animated_contents();
-                }
-            });
-        }(jQuery));
+                    }
+                });
+            }(jQuery));
+        });
     </script>
 </body>
 </html>
