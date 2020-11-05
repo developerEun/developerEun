@@ -677,6 +677,11 @@ section{
         margin-left: 0;
     }
 
+    .guide{
+        top: 10%;
+        transform: translateX(-50%);
+    }
+
     
 }
 
@@ -697,6 +702,10 @@ section{
     #section3 .contact{
         bottom: 50px;
         left: 30px;
+    }
+    
+    .guide{
+        top: 5%;
     }
 
 }
