@@ -571,11 +571,11 @@ section{
         height: auto !important;
     }
     
-    #section1, #section1 .fp-tableCell, #section2, #section2 .fp-tableCell{
+    #section1, #section1 .fp-tableCell, #section2, #section2 .fp-tableCell, #section3 .fp-tableCell{
         height: auto !important;
     }
     
-    #section0, #section0 .fp-tableCell, #section3, #section3 .fp-tableCell{
+    #section0, #section0 .fp-tableCell, #section3, {
         height: 100vh !important;
     }
 
@@ -621,11 +621,17 @@ section{
 }
 
 @media (max-width: 767px) {
+    
     #section0 .typing{
         font-size: 10.41vw;
     }
     #section0 .typing li{
         line-height: 13.02vw;
+    }
+
+    #section1{
+        background: url(../img/aboutImg_mb.jpg) no-repeat top center;
+        background-size: contain;
     }
 
     #section1 .aboutme{
