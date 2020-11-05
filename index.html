@@ -25,7 +25,7 @@
     </header>
     <section>
         <div id="fullpage">
-            <div class="section active" id="section0">
+            <div class="section " id="section0">
                 <div class="typing-txt"> 
                     <ul>
                         <li>Hello</li>
@@ -133,11 +133,11 @@
                                 </div>
                             </div>
                             <div class="zt-skill-bar">
-                                <div data-width="90">ORACLE<span>85%</span>
+                                <div data-width="85">ORACLE<span>85%</span>
                                 </div>
                             </div>
                             <div class="zt-skill-bar">
-                                <div data-width="90">JQEURY<span>85%</span>
+                                <div data-width="85">JQEURY<span>85%</span>
                                 </div>
                             </div>
                             <div class="zt-skill-bar">
@@ -148,7 +148,7 @@
                     </dl>
                 </div>
             </div>
-            <div class="section" id="section2">
+            <div class="section active" id="section2">
                 <div class="mainRolling">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
@@ -253,6 +253,18 @@
                         <div class="swiper-pagination_main">
                         </div>
                     </div>
+                </div>
+                <div class="slideGuide">
+                    <div class="guide">
+                        <div class='icon-scroll-row'></div>
+                        <p class="guideTxt">
+                            마우스를 이용해 슬라이드를 <span>좌우</span>로 넘기면서 <br/>다른 프로젝트를 구경해보세요!
+                        </p>
+                        <p class="guideClose">
+                            화면을 누르시면 창이 닫힙니다.
+                        </p>
+                    </div>
+
                 </div>
             </div>
             <div class="section" id="section3">
@@ -382,6 +394,10 @@
                     }
                 });
             }(jQuery));
+        });
+
+        $(".slideGuide").click(function(){
+            $(".slideGuide").fadeOut();
         });
     </script>
 </body>
