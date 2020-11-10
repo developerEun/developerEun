@@ -1,0 +1,162 @@
+header{
+    width: 100%; 
+    height: 60px; 
+    position: fixed;
+    box-shadow: 2px 0px 10px 0px #ddd;
+}
+
+header ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #8977ad;
+}
+
+header li{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header li:first-child{
+    left: 10px;
+}
+
+header li:nth-child(2){
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header li:last-child{
+    right: 10px;
+}
+
+header .back a{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../img/back.png) no-repeat center center;
+    background-size: 100%;
+}
+
+header .gnb a{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../img/menu.png) no-repeat center center;
+    background-size: 100%;
+}
+
+header .logo a{
+    display: inline-block;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #fff;
+}
+
+section{
+    padding-top: 100px;
+}
+
+section h1{
+    text-align: center;
+}
+
+section h1 img{
+    width: 100px;
+}
+
+.inner{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.loginForm{
+    margin-top: 50px;
+}
+
+.loginForm > *{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.loginForm > input {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.mbsc-material .mbsc-input{
+    padding: 7px;
+}
+
+.findLogin{
+    margin: 40px 0 20px 0;
+    color: #aaa;
+}
+
+.ui-mobile .ui-page .page_header{
+    background-color:#8977ad;
+}
+
+.ui-mobile .ui-page .page_header .ui-btn{
+    background-color:#8977ad; border:0;
+}
+
+.page_header .ui-title{
+    text-shadow:0 0 0; 
+    color:#ffffff;
+    letter-spacing: 1px;
+    font-family: 'Squada One', cursive;
+    font-size: 1.3em;
+}
+
+.page_header .menu{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cf:after{
+    clear: both; 
+    content:''; 
+    display: block;
+}
+
+#sideMenu #panel_header a{
+    float: right;
+}
+
+#sideMenu .my_profile .my_profile_nth2 h4{
+    color: #fff;
+}
+
+#sideMenu #side_menu_evnet_banner img{
+    width: 100%;
+}
+
+.ui-page-theme-b .ui-btn, html .ui-bar-b .ui-btn, html .ui-body-b .ui-btn, html body .ui-group-theme-b .ui-btn, html head+body .ui-btn.ui-btn-b, .ui-page-theme-b .ui-btn:visited, html .ui-bar-b .ui-btn:visited, html .ui-body-b .ui-btn:visited, html body .ui-group-theme-b .ui-btn:visited, html head+body .ui-btn.ui-btn-b:visited{
+    background-color: #2a2a2a;
+    border-color: transparent;
+}
+
+#side_menu_sub{
+    margin: 1em 0;
+}
+
+.ui-btn-inline{
+    margin-right: 0;
+}
+
+.list_ed .ui-btn{
+    padding: 1em .5em;
+    font-weight: 400;
+}
+
+.ui-btn-icon-notext:after{
+    background-color: transparent;
+    border: none;
+}

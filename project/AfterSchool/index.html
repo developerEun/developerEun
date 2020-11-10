@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <title>AFTER SCHOOL</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.1/jquery.validate.js"></script>
+
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link rel="stylesheet" href="css/mobiscroll.jquery.lite.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/mobiscroll.jquery.lite.min.js"></script>
+
+    <link rel="stylesheet" href="css/mobiscroll-demo-icons.css">
+
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .md-login-form .md-logo {
+        display: inline-block;
+        width: 100%;
+        font-size: 80px;
+        text-align: center;
+        margin: 15% 0 10% 0;
+        color: #1c75bc;
+    }
+    </style>
+</head> 
+<body>
+
+<div mbsc-page class="demo-login">
+    <div class="inner">
+        <form id="demo" class="md-login-form" mbsc-form>
+            <div class="md-logo micons icon-mbsc-logo"><img src="img/logo.png" alt="" width="100px"/></div>
+            <div class="mbsc-form-group-inset login_user">
+                <label>
+                    <input id="email" type="email" name="email" placeholder="ID를 입력해주세요" />
+                </label>
+                <label>
+                    <input name="password" type="text" placeholder="PASSWORD를 입력해주세요" data-password-toggle="true" data-icon="none" data-icon-align="right" />
+                </label>
+            </div>
+            <div class="mbsc-form-group-inset mbsc-padding mbsc-align-center findLogin">
+                <a href="signup.html">회원가입</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="signup.html">ID/PW 찾기</a>
+            </div>
+            <div class="mbsc-form-group-inset mbsc-padding">
+                <button class="mbsc-btn-block md-signup-btn" type="submit">Login</button>
+            </div>
+            <div class="mbsc-form-group-inset mbsc-padding mbsc-align-center">
+                <a href="main.html" target="_self" class="home_btn">로그인처리</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    // Use the settings object to change the theme
+    mobiscroll.settings = {
+        lang: 'en',        // Specify language like: lang: 'pl' or omit setting to use default
+        theme: 'material'  // Specify theme like: theme: 'ios' or omit setting to use default
+    };
+    
+    $(function () {
+        var isLogin = false;
+        
+        $('#demo').on('submit', function (ev) {
+            if ($(this).valid()) {
+                ev.preventDefault();
+                $('#demo-success').mobiscroll('show');
+            }
+        }).validate({
+            errorClass: 'mbsc-err-msg',
+            errorPlacement: function (error, element) {
+                element.parent().append(error);
+            },
+            highlight: function (element) {
+                $(element).closest('.mbsc-input').addClass("mbsc-err");
+            },
+            unhighlight: function (element) {
+                $(element).closest('.mbsc-input').removeClass("mbsc-err");
+            },
+            rules: {
+                "email": {
+                    required: true,
+                    email: false
+                },
+                "password": {
+                    required: true,
+                    minlength: 6
+                }
+            },
+            messages: {
+                "email": {
+                    required: "ID가 입력되지 않았습니다.",
+                    email: "이메일의 형식에 맞지 않습니다."
+                },
+                "password": {
+                    required: 'PASSWORD가 입력되지 않았습니다.',
+                    minlength: "비밀번호는 최소 6자이상이 되야합니다."
+                }
+            }
+        });
+    
+    });
+</script>
+
+</body>
+</html>
