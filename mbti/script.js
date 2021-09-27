@@ -11,7 +11,7 @@ function readJSON(file, callback) {
 }
 
 //함수 사용법
-readJSON("./data.json", function(text){
+readJSON("https://developereun.github.io/mbti/data.json", function(text){
     var data = JSON.parse(text);
     var target = document.querySelector("button");
     var clickCnt = -1;
