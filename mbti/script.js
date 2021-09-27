@@ -70,7 +70,7 @@ function nextQna(clickCnt, data, allScore, score){
             var mbtiTxt = document.createElement("p");
             mbtiTxt.append("끝났다리~~~~~~~~~");
             document.body.append(mbtiTxt);
-            alert(name + "! 너의 MBTI는 '" + typeMBTI + "' 라능 ㅇㅅㅇ~~");
+            alert(nickname + "! 너의 MBTI는 '" + typeMBTI + "' 라능 ㅇㅅㅇ~~");
         }
     }
     
