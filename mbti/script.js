@@ -25,10 +25,12 @@ readJSON("https://developereun.github.io/mbti/data.json", function(text){
 
 var countMBTI = 0;
 var typeMBTI = "";
+var nickname = "";
 
 function nextQna(clickCnt, data, allScore, score){
     if(clickCnt == -1){
         clickCnt = 0;
+        nickname = inputString = prompt('니 이름이 뭐고?~~~~');
     }else{
         allScore += score;
         if(clickCnt != Object.keys(data).length){
@@ -64,7 +66,11 @@ function nextQna(clickCnt, data, allScore, score){
                     typeMBTI = typeMBTI + "P";
                 }                       
             }
-            alert("당신의 MBTI는 " + typeMBTI + "입니다. ");
+            document.body.innerHTML = "";
+            var mbtiTxt = document.createElement("p");
+            mbtiTxt.append("끝났다리~~~~~~~~~");
+            document.body.append(mbtiTxt);
+            alert(name + "! 너의 MBTI는 '" + typeMBTI + "' 라능 ㅇㅅㅇ~~");
         }
     }
     
