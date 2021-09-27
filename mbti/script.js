@@ -29,7 +29,7 @@ var nickname = "";
 
 function nextQna(clickCnt, data, allScore, score){
     if(clickCnt == -1){
-        clickCnt = 0;
+        clickCnt = 0; 
         nickname = inputString = prompt('니 이름이 뭐고?~~~~');
     }else{
         allScore += score;
